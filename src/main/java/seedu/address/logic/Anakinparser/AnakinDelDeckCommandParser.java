@@ -1,4 +1,4 @@
-package seedu.address.logic.AnakinParser;
+package seedu.address.logic.Anakinparser;
 
 import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
