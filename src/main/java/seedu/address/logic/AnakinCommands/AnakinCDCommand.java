@@ -25,12 +25,25 @@ public class AnakinCDCommand extends AnakinCommand {
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
 
-    public static final String MESSAGE_CD_SUCCESS = "Successfully navigated %1$s";
+    public static final String MESSAGE_CD_SUCCESS = "Successfully navigated into %1$s";
+    public static final String MESSAGE_EXIT_SUCCESS = "Successfully exited deck";
 
     private final Index targetIndex;
 
+    private boolean noIndex;
+
     public AnakinCDCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
+        this.noIndex = false;
+    }
+
+    /**
+     * Alternate constructor for AnakinCDCommand that does not require an Index
+     */
+    public AnakinCDCommand(){
+        //Set targetIndex as 0.
+        this.targetIndex = Index.fromZeroBased(0);
+        this.noIndex = true;
     }
 
     @Override
@@ -38,14 +51,22 @@ public class AnakinCDCommand extends AnakinCommand {
         requireNonNull(anakinModel);
         List<AnakinDeck> lastShownList = anakinModel.getFilteredDeckList();
 
-        if (targetIndex.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
-        }
+        if (this.noIndex){
+            //Exit the deck
+            anakinModel.getOutOfDeck();
+            anakinModel.commitAnakin();
+            return new CommandResult(String.format(MESSAGE_EXIT_SUCCESS));
+            
+        } else {
+            if (targetIndex.getZeroBased() >= lastShownList.size()) {
+                throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
+            }
 
-        AnakinDeck deckToEnter = lastShownList.get(targetIndex.getZeroBased());
-        // anakinModel.getAnakin().getIntoDeck(deckToEnter); //REQUIRES SUPPORT FROM MODEL
-        anakinModel.commitAnakin();
-        return new CommandResult(String.format(MESSAGE_CD_SUCCESS, deckToEnter));
+            AnakinDeck deckToEnter = lastShownList.get(targetIndex.getZeroBased());
+            anakinModel.goIntoDeck(deckToEnter);
+            anakinModel.commitAnakin();
+            return new CommandResult(String.format(MESSAGE_CD_SUCCESS, deckToEnter));
+        }
     }
 
     @Override

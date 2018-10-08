@@ -22,13 +22,20 @@ public class AnakinCDCommandParser implements AnakinParserInterface<AnakinCDComm
      * and returns an AnakinCDCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
      */
+
     public AnakinCDCommand parse(String args) throws ParseException {
-        try {
-            Index index = ParserUtil.parseIndex(args);
-            return new AnakinCDCommand(index);
-        } catch (ParseException pe) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, AnakinCDCommand.MESSAGE_USAGE), pe);
+        //For cd with no index
+        if(args.length() == 0){
+            return new AnakinCDCommand();
+        } else {
+
+            try {
+                Index index = ParserUtil.parseIndex(args);
+                return new AnakinCDCommand(index);
+            } catch (ParseException pe) {
+                throw new ParseException(
+                        String.format(MESSAGE_INVALID_COMMAND_FORMAT, AnakinCDCommand.MESSAGE_USAGE), pe);
+            }
         }
     }
 
