@@ -41,10 +41,10 @@ public class AnakinCDCommand extends AnakinCommand {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
 
-        AnakinDeck deckToDelete = lastShownList.get(targetIndex.getZeroBased());
-        anakinModel.deleteDeck(deckToDelete);
+        AnakinDeck deckToEnter = lastShownList.get(targetIndex.getZeroBased());
+        anakinModel.deleteDeck(deckToEnter);
         anakinModel.commitAnakin();
-        return new CommandResult(String.format(MESSAGE_CD_SUCCESS, deckToDelete));
+        return new CommandResult(String.format(MESSAGE_CD_SUCCESS, deckToEnter));
     }
 
     @Override
