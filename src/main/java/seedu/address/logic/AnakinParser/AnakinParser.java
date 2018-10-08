@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 import seedu.address.logic.AnakinCommands.AnakinCDCommand;
 import seedu.address.logic.AnakinCommands.AnakinCommand;
 import seedu.address.logic.AnakinCommands.AnakinDelDeckCommand;
+import seedu.address.logic.AnakinCommands.AnakinNewCardCommand;
 import seedu.address.logic.AnakinCommands.AnakinNewDeckCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -40,13 +41,14 @@ public class AnakinParser {
         final String commandWord = matcher.group("commandWord");
         final String arguments = matcher.group("arguments");
         switch (commandWord) {
-
         case AnakinNewDeckCommand.COMMAND_WORD:
             return new AnakinNewDeckCommandParser().parse(arguments);
 
         case AnakinDelDeckCommand.COMMAND_WORD:
             return new AnakinDelDeckCommandParser().parse(arguments);
 
+        case AnakinNewCardCommand.COMMAND_WORD:
+            return new AnakinNewCardCommandParser().parse(arguments);
 
         case AnakinCDCommand.COMMAND_WORD:
             return new AnakinCDCommandParser().parse(arguments);
