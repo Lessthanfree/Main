@@ -6,6 +6,7 @@ import static seedu.address.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import seedu.address.logic.AnakinCommands.AnakinCDCommand;
 import seedu.address.logic.AnakinCommands.AnakinCommand;
 import seedu.address.logic.AnakinCommands.AnakinDelDeckCommand;
 import seedu.address.logic.AnakinCommands.AnakinNewDeckCommand;
@@ -45,6 +46,10 @@ public class AnakinParser {
 
         case AnakinDelDeckCommand.COMMAND_WORD:
             return new AnakinDelDeckCommandParser().parse(arguments);
+
+
+        case AnakinCDCommand.COMMAND_WORD:
+            return new AnakinCDCommandParser().parse(arguments);
 
         // TO DO
             /*
