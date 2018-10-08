@@ -13,8 +13,9 @@ import java.util.List;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Deletes a deck identified using it's displayed index from Anakin.
+ * Navigates into a deck identified using its displayed index from Anakin.
  */
+
 public class AnakinCDCommand extends AnakinCommand {
 
     public static final String COMMAND_WORD = "cd";
@@ -42,7 +43,7 @@ public class AnakinCDCommand extends AnakinCommand {
         }
 
         AnakinDeck deckToEnter = lastShownList.get(targetIndex.getZeroBased());
-        anakinModel.deleteDeck(deckToEnter);
+        // anakinModel.getAnakin().getIntoDeck(deckToEnter); //REQUIRES SUPPORT FROM MODEL
         anakinModel.commitAnakin();
         return new CommandResult(String.format(MESSAGE_CD_SUCCESS, deckToEnter));
     }
