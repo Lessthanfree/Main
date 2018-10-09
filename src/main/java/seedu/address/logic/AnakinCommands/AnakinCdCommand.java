@@ -16,7 +16,7 @@ import static java.util.Objects.requireNonNull;
  * Navigates into a deck identified using its displayed index from Anakin.
  */
 
-public class AnakinCDCommand extends AnakinCommand {
+public class AnakinCdCommand extends AnakinCommand {
 
     public static final String COMMAND_WORD = "cd";
 
@@ -32,15 +32,15 @@ public class AnakinCDCommand extends AnakinCommand {
 
     private boolean noIndex;
 
-    public AnakinCDCommand(Index targetIndex) {
+    public AnakinCdCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
         this.noIndex = false;
     }
 
     /**
-     * Alternate constructor for AnakinCDCommand that does not require an Index
+     * Alternate constructor for AnakinCdCommand that does not require an Index
      */
-    public AnakinCDCommand(){
+    public AnakinCdCommand(){
         //Set targetIndex as 0.
         this.targetIndex = Index.fromZeroBased(0);
         this.noIndex = true;
@@ -56,7 +56,6 @@ public class AnakinCDCommand extends AnakinCommand {
             anakinModel.getOutOfDeck();
             anakinModel.commitAnakin();
             return new CommandResult(String.format(MESSAGE_EXIT_SUCCESS));
-            
         } else {
             if (targetIndex.getZeroBased() >= lastShownList.size()) {
                 throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
@@ -72,8 +71,8 @@ public class AnakinCDCommand extends AnakinCommand {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof AnakinCDCommand // instanceof handles nulls
-                && targetIndex.equals(((AnakinCDCommand) other).targetIndex)); // state check
+                || (other instanceof AnakinCdCommand // instanceof handles nulls
+                && targetIndex.equals(((AnakinCdCommand) other).targetIndex)); // state check
     }
 }
 

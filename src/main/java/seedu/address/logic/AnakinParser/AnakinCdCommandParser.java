@@ -5,7 +5,7 @@ import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT
 import java.util.stream.Stream;
 
 import seedu.address.commons.core.index.Index;
-import seedu.address.logic.AnakinCommands.AnakinCDCommand;
+import seedu.address.logic.AnakinCommands.AnakinCdCommand;
 import seedu.address.logic.parser.ArgumentMultimap;
 import seedu.address.logic.parser.ParserUtil;
 import seedu.address.logic.parser.Prefix;
@@ -15,26 +15,26 @@ import seedu.address.logic.parser.exceptions.ParseException;
 /**
  * Parses input arguments and creates a new AddCommand object
  */
-public class AnakinCDCommandParser implements AnakinParserInterface<AnakinCDCommand> {
+public class AnakinCdCommandParser implements AnakinParserInterface<AnakinCdCommand> {
 
     /**
-     * Parses the given {@code String} of arguments in the context of the AnakinCDCommand
-     * and returns an AnakinCDCommand object for execution.
+     * Parses the given {@code String} of arguments in the context of the AnakinCdCommand
+     * and returns an AnakinCdCommand object for execution.
      * @throws ParseException if the user input does not conform the expected format
      */
 
-    public AnakinCDCommand parse(String args) throws ParseException {
+    public AnakinCdCommand parse(String args) throws ParseException {
         //For cd with no index
         if(args.length() == 0){
-            return new AnakinCDCommand();
+            return new AnakinCdCommand();
         } else {
 
             try {
                 Index index = ParserUtil.parseIndex(args);
-                return new AnakinCDCommand(index);
+                return new AnakinCdCommand(index);
             } catch (ParseException pe) {
                 throw new ParseException(
-                        String.format(MESSAGE_INVALID_COMMAND_FORMAT, AnakinCDCommand.MESSAGE_USAGE), pe);
+                        String.format(MESSAGE_INVALID_COMMAND_FORMAT, AnakinCdCommand.MESSAGE_USAGE), pe);
             }
         }
     }
