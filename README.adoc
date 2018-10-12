@@ -38,9 +38,11 @@ image:docs/images/ui-mockups/Gameplay-Answer.png[width="400"]
 endif::[]
 
 ifndef::env-github[]
-image:docs/images/ui-mockups/Gameplay-Question.png[width="400"]
-image:docs/images/ui-mockups/Gameplay-Answer.png[width="400"]
+image:images/ui-mockups/Gameplay-Question.png[width="400"]
+image:images/ui-mockups/Gameplay-Answer.png[width="400"]
 endif::[]
+
+
 
 == Site Map
 
