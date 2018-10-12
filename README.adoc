@@ -1,9 +1,9 @@
 ifdef::env-github[]
-image:docs/images/Anakin.png[width="250", align="center"]
+image::docs/images/Anakin.png[width="250", align="center"]
 endif::[]
 
 ifndef::env-github[]
-image:docs/images/Anakin.png[width="200", align="center"]
+image::images/Anakin.png[width="250", align="center"]
 endif::[]
 
 = Anakin
@@ -25,6 +25,9 @@ Amazing work. Simply amazing.
 
 [quote, Donnie T., Political Science Student]
 The greatest CLI app, maybe, ever!
+
+[quote, Tony Stark, Billionare; Inventor; Entrepreneur]
+Better than Pepper Potts!
 
 [quote, A.Aron Tan, Lecturer]
 They did it.
