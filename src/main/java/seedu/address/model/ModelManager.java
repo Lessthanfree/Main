@@ -226,6 +226,6 @@ public class ModelManager extends ComponentManager implements Model {
         // state check
         ModelManager other = (ModelManager) obj;
         return versionedAnakin.equals(other.versionedAnakin)
-                && filteredDecks.equals(other.filteredDecks);
+                   && filteredDecks.equals(other.filteredDecks);
     }
 }

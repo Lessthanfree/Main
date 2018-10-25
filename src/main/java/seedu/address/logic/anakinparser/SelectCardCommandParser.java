@@ -22,8 +22,8 @@ public class SelectCardCommandParser implements ParserInterface<SelectCardComman
             Index index = ParserUtil.parseIndex(args);
             return new SelectCardCommand(index);
         } catch (ParseException pe) {
-            throw new ParseException(
-                    String.format(MESSAGE_INVALID_COMMAND_FORMAT, SelectCardCommand.MESSAGE_USAGE), pe);
+            throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
+                    SelectCardCommand.MESSAGE_USAGE), pe);
         }
     }
 }

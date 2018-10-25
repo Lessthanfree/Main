@@ -39,7 +39,7 @@ public class NewCardCommandParser implements ParserInterface<NewCardCommand> {
                 ArgumentTokenizer.tokenize(args, PREFIX_ANSWER, PREFIX_QUESTION);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_ANSWER, PREFIX_QUESTION)
-                || !argMultimap.getPreamble().isEmpty()) {
+                    || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     NewCardCommand.MESSAGE_USAGE));
         }

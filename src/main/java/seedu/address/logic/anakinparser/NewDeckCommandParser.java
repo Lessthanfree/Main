@@ -38,7 +38,7 @@ public class NewDeckCommandParser implements ParserInterface<NewDeckCommand> {
                 ArgumentTokenizer.tokenize(args, PREFIX_NAME);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_NAME)
-                || !argMultimap.getPreamble().isEmpty()) {
+                    || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
                     NewDeckCommand.MESSAGE_USAGE));
         }

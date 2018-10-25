@@ -50,7 +50,7 @@ public class UserPrefs {
         UserPrefs o = (UserPrefs) other;
 
         return Objects.equals(guiSettings, o.guiSettings)
-                && Objects.equals(anakinFilePath, o.anakinFilePath);
+                   && Objects.equals(anakinFilePath, o.anakinFilePath);
     }
 
     @Override

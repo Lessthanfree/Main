@@ -146,7 +146,7 @@ public class AddressbookModelManagerAddressbook extends AddressbookComponentMana
         // state check
         AddressbookModelManagerAddressbook other = (AddressbookModelManagerAddressbook) obj;
         return versionedAddressBook.equals(other.versionedAddressBook)
-                && filteredPersons.equals(other.filteredPersons);
+                   && filteredPersons.equals(other.filteredPersons);
     }
 
 }

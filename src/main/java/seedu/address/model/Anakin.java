@@ -239,8 +239,8 @@ public class Anakin implements ReadOnlyAnakin {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof Anakin // instanceof handles nulls
-                && decks.equals(((Anakin) other).decks));
+                   || (other instanceof Anakin // instanceof handles nulls
+                           && decks.equals(((Anakin) other).decks));
     }
 
     @Override
