@@ -73,27 +73,27 @@ public class NewCardCommandTest {
     }
 
     @Test
-    public void execute_validCardButNotInDeck_throwsRuntimeException() throws Exception{
+    public void execute_validCardButNotInDeck_throwsRuntimeException() throws Exception {
         Card validCard = CARD_B;
         NewCardCommand newCardCommand = new NewCardCommand(validCard);
         Model model = testModel;
         thrown.expect(RuntimeException.class);
-        newCardCommand.execute(model,commandHistory);
+        newCardCommand.execute(model, commandHistory);
 
     }
 
     // Integrated test
     @Test
-    public void execute_validCardInDeck_success() throws Exception{
+    public void execute_validCardInDeck_success() throws Exception {
         Card validCard = CARD_B;
         NewCardCommand newCardCommand = new NewCardCommand(validCard);
-        Deck validDeck =  new DeckBuilder().
+        Deck validDeck = new DeckBuilder().
                 withName("Deck with Card B").build();
 
         Model model = testModel;
         model.goIntoDeck(validDeck);
 
-        CommandResult commandResult = newCardCommand.execute(model,commandHistory);
+        CommandResult commandResult = newCardCommand.execute(model, commandHistory);
 
         assertEquals(String.format(
                 NewCardCommand.MESSAGE_NEW_CARD_SUCCESS,
@@ -245,12 +245,12 @@ public class NewCardCommandTest {
         }
 
         @Override
-        public boolean isInsideDeck(){
+        public boolean isInsideDeck() {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void sort(){
+        public void sort() {
             throw new AssertionError("This method should not be called.");
         }
 

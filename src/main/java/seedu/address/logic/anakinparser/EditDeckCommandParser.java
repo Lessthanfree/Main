@@ -5,7 +5,6 @@ import static seedu.address.commons.core.AddressbookMessages.MESSAGE_INVALID_COM
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 
 import seedu.address.commons.core.index.Index;
-
 import seedu.address.logic.anakincommands.EditDeckCommand;
 import seedu.address.logic.anakincommands.EditDeckCommand.EditDeckDescriptor;
 import seedu.address.logic.parser.ArgumentMultimap;
@@ -20,6 +19,7 @@ public class EditDeckCommandParser implements ParserInterface<EditDeckCommand> {
     /**
      * Parses the given {@code String} of arguments in the context of the EditDeckCommand
      * and returns an EditDeckCommand object for execution.
+     *
      * @throws ParseException if the user input does not conform the expected format
      */
     public EditDeckCommand parse(String args) throws ParseException {

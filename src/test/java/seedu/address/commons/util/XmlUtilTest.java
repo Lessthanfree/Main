@@ -37,8 +37,8 @@ public class XmlUtilTest {
     private static final String INVALID_NAME = " ";
 
     private static final String VALID_NAME = "Qui Gon Jinn";
-    private static final List<XmlAdaptedCard> VALID_CARDS = Collections.singletonList(new XmlAdaptedCard
-            ("How is", "Gamora"));
+    private static final List<XmlAdaptedCard> VALID_CARDS = Collections
+            .singletonList(new XmlAdaptedCard("How is", "Gamora"));
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();

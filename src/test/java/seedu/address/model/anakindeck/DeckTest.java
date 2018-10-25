@@ -11,6 +11,7 @@ import static seedu.address.testutil.TypicalDecks.DECK_B;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
 import seedu.address.testutil.DeckBuilder;
 
 public class DeckTest {

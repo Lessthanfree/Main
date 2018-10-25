@@ -46,31 +46,31 @@ public class Parser {
         final String commandWord = matcher.group("commandWord");
         final String arguments = matcher.group("arguments");
         switch (commandWord) {
-        case NewDeckCommand.COMMAND_WORD:
-            return new NewDeckCommandParser().parse(arguments);
+            case NewDeckCommand.COMMAND_WORD:
+                return new NewDeckCommandParser().parse(arguments);
 
-        case EditDeckCommand.COMMAND_WORD:
-            return new EditDeckCommandParser().parse(arguments);
+            case EditDeckCommand.COMMAND_WORD:
+                return new EditDeckCommandParser().parse(arguments);
 
-        case DeleteDeckCommand.COMMAND_WORD:
-            return new DeleteDeckCommandParser().parse(arguments);
+            case DeleteDeckCommand.COMMAND_WORD:
+                return new DeleteDeckCommandParser().parse(arguments);
 
-        case NewCardCommand.COMMAND_WORD:
-            return new NewCardCommandParser().parse(arguments);
+            case NewCardCommand.COMMAND_WORD:
+                return new NewCardCommandParser().parse(arguments);
 
-        case EditCardCommand.COMMAND_WORD:
-            return new EditCardCommandParser().parse(arguments);
+            case EditCardCommand.COMMAND_WORD:
+                return new EditCardCommandParser().parse(arguments);
 
-        case DeleteCardCommand.COMMAND_WORD:
-            return new DeleteCardCommandParser().parse(arguments);
+            case DeleteCardCommand.COMMAND_WORD:
+                return new DeleteCardCommandParser().parse(arguments);
 
-        case ChangeDeckCommand.COMMAND_WORD:
-            return new ChangeDeckCommandParser().parse(arguments);
+            case ChangeDeckCommand.COMMAND_WORD:
+                return new ChangeDeckCommandParser().parse(arguments);
 
-        case SortCommand.COMMAND_WORD:
-            return new SortCommand();
+            case SortCommand.COMMAND_WORD:
+                return new SortCommand();
 
-        // TO DO
+            // TO DO
             /*
         case SelectCommand.COMMAND_WORD:
             return new SelectCommandParser().parse(arguments);
@@ -88,15 +88,15 @@ public class Parser {
             return new HistoryCommand();
 */
 
-        case ExitCommand.COMMAND_WORD:
-            return new ExitCommand();
+            case ExitCommand.COMMAND_WORD:
+                return new ExitCommand();
 
-        case HelpCommand.COMMAND_WORD:
-            return new HelpCommand();
+            case HelpCommand.COMMAND_WORD:
+                return new HelpCommand();
 
 
-        default:
-            throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
+            default:
+                throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
         }
     }
 

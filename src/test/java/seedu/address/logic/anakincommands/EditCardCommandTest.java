@@ -1,7 +1,6 @@
 package seedu.address.logic.anakincommands;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static seedu.address.logic.anakincommands.CommandTestUtil.VALID_ANSWER_A;
 import static seedu.address.logic.anakincommands.CommandTestUtil.VALID_ANSWER_B;
@@ -140,7 +139,7 @@ public class EditCardCommandTest {
      * Edit filtered list where index is larger than size of filtered list,
      * but smaller than size of address book
      */
-      // TODO: When filter functions are available write filter test
+    // TODO: When filter functions are available write filter test
 //    @Test
 //    public void execute_invalidAnakinCardIndexFilteredList_failure() {
 //        showCardAtIndex(model, INDEX_FIRST_CARD);
@@ -153,7 +152,6 @@ public class EditCardCommandTest {
 //
 //        assertCommandFailure(anakinEditCardCommand, model, commandHistory, AddressbookMessages.MESSAGE_INVALID_CARD_DISPLAYED_INDEX);
 //    }
-
     @Test
     public void executeUndoRedo_validIndexUnfilteredList_success() throws Exception {
         Card editedCard = new CardBuilder().build();
@@ -198,7 +196,7 @@ public class EditCardCommandTest {
      * 4. Redo the edit. This ensures {@code RedoCommand} edits the anakincard object regardless of indexing.
      */
 
-      //TODO when undo/redo is supported
+    //TODO when undo/redo is supported
 //    @Test
 //    public void executeUndoRedo_validIndexFilteredList_sameAnakinCardEdited() throws Exception {
 //        Card editedAnakinCard = new CardBuilder().build();
@@ -223,7 +221,6 @@ public class EditCardCommandTest {
 //        expectedModel.redoAnakin();
 //        assertCommandSuccess(new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
 //    }
-
     @Test
     public void equals() {
         EditCardDescriptor CARD_A_DESC = new EditCardDescriptorBuilder()

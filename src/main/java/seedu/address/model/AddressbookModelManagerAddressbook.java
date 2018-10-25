@@ -51,7 +51,9 @@ public class AddressbookModelManagerAddressbook extends AddressbookComponentMana
         return versionedAddressBook;
     }
 
-    /** Raises an event to indicate the model has changed */
+    /**
+     * Raises an event to indicate the model has changed
+     */
     private void indicateAddressBookChanged() {
         raise(new AddressBookChangedEvent(versionedAddressBook));
     }

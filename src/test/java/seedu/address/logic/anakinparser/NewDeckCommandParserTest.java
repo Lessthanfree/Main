@@ -28,7 +28,7 @@ public class NewDeckCommandParserTest {
                 new NewDeckCommand(expectedDeck));
 
         // whitespace only preamble
-        assertParseSuccess(parser,  PREAMBLE_WHITESPACE + VALID_DECK_NAME_A_ARGS,
+        assertParseSuccess(parser, PREAMBLE_WHITESPACE + VALID_DECK_NAME_A_ARGS,
                 new NewDeckCommand(expectedDeck));
     }
 

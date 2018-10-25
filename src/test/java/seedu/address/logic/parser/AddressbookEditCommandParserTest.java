@@ -24,9 +24,9 @@ import static seedu.address.logic.commands.AddressbookCommandTestUtil.VALID_PHON
 import static seedu.address.logic.commands.AddressbookCommandTestUtil.VALID_PHONE_BOB;
 import static seedu.address.logic.commands.AddressbookCommandTestUtil.VALID_TAG_FRIEND;
 import static seedu.address.logic.commands.AddressbookCommandTestUtil.VALID_TAG_HUSBAND;
-import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.logic.parser.AddressbookCommandParserTestUtil.assertParseFailure;
 import static seedu.address.logic.parser.AddressbookCommandParserTestUtil.assertParseSuccess;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
 import static seedu.address.testutil.AddressbookTypicalIndexes.INDEX_FIRST_PERSON;
 import static seedu.address.testutil.AddressbookTypicalIndexes.INDEX_SECOND_PERSON;
 import static seedu.address.testutil.AddressbookTypicalIndexes.INDEX_THIRD_PERSON;

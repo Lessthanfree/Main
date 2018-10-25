@@ -30,11 +30,11 @@ public class NewCardCommandParserTest {
 
         // clean
         System.out.println("Valid args: " + VALID_CARD_A_ARGS);
-        assertParseSuccess(parser,  VALID_CARD_A_ARGS ,
+        assertParseSuccess(parser, VALID_CARD_A_ARGS,
                 new NewCardCommand(expectedCard));
 
         // whitespace only preamble
-        assertParseSuccess(parser, PREAMBLE_WHITESPACE + VALID_CARD_A_ARGS ,
+        assertParseSuccess(parser, PREAMBLE_WHITESPACE + VALID_CARD_A_ARGS,
                 new NewCardCommand(expectedCard));
     }
 

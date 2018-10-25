@@ -42,7 +42,7 @@ public class EditDeckCommand extends Command {
     private final EditDeckDescriptor editDeckDescriptor;
 
     /**
-     * @param index of the deck in the filtered deck list to edit
+     * @param index              of the deck in the filtered deck list to edit
      * @param editDeckDescriptor details to edit the deck with
      */
     public EditDeckCommand(Index index, EditDeckDescriptor editDeckDescriptor) {
@@ -51,6 +51,18 @@ public class EditDeckCommand extends Command {
 
         this.index = index;
         this.editDeckDescriptor = new EditDeckDescriptor(editDeckDescriptor);
+    }
+
+    /**
+     * Creates and returns a {@code Deck} with the details of {@code deckToEdit}
+     * edited with {@code editDeckDescriptor}.
+     */
+    private static Deck createEditedDeck(Deck deckToEdit, EditDeckDescriptor editDeckDescriptor) {
+        assert deckToEdit != null;
+
+        Name updatedName = editDeckDescriptor.getName().orElse(deckToEdit.getName());
+
+        return new Deck(updatedName);
     }
 
     @Override
@@ -73,18 +85,6 @@ public class EditDeckCommand extends Command {
         model.updateFilteredDeckList(PREDICATE_SHOW_ALL_DECKS);
         model.commitAnakin();
         return new CommandResult(String.format(MESSAGE_EDIT_DECK_SUCCESS, editedDeck));
-    }
-
-    /**
-     * Creates and returns a {@code Deck} with the details of {@code deckToEdit}
-     * edited with {@code editDeckDescriptor}.
-     */
-    private static Deck createEditedDeck(Deck deckToEdit, EditDeckDescriptor editDeckDescriptor) {
-        assert deckToEdit != null;
-
-        Name updatedName = editDeckDescriptor.getName().orElse(deckToEdit.getName());
-
-        return new Deck(updatedName);
     }
 
     @Override
@@ -114,7 +114,8 @@ public class EditDeckCommand extends Command {
         // private List<Card> cards;
         private UniqueCardList cards;
 
-        public EditDeckDescriptor() {}
+        public EditDeckDescriptor() {
+        }
 
         /**
          * Copy constructor.
@@ -132,22 +133,12 @@ public class EditDeckCommand extends Command {
             return CollectionUtil.isAnyNonNull(name, cards);
         }
 
-        public void setName(Name name) {
-            this.name = name;
-        }
-
         public Optional<Name> getName() {
             return Optional.ofNullable(name);
         }
 
-
-        /**
-         * Sets {@code cards} to this object's {@code tags}.
-         * A defensive copy of {@code cards} is used internally.
-         */
-        public void setCards(UniqueCardList cards) {
-            // this.cards = (cards != null) ? new ArrayList<>(cards) : null;
-            this.cards = cards;
+        public void setName(Name name) {
+            this.name = name;
         }
 
         /**
@@ -158,6 +149,15 @@ public class EditDeckCommand extends Command {
         public Optional<UniqueCardList> getCards() {
             // return (cards != null) ? Optional.of(Collections.unmodifiableList(cards)) : Optional.empty();
             return Optional.of(cards);
+        }
+
+        /**
+         * Sets {@code cards} to this object's {@code tags}.
+         * A defensive copy of {@code cards} is used internally.
+         */
+        public void setCards(UniqueCardList cards) {
+            // this.cards = (cards != null) ? new ArrayList<>(cards) : null;
+            this.cards = cards;
         }
 
         @Override

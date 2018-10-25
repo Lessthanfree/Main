@@ -12,21 +12,21 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import seedu.address.model.anakindeck.Card;
 import seedu.address.model.anakindeck.Deck;
 import seedu.address.model.anakindeck.anakinexceptions.DuplicateDeckException;
 import seedu.address.testutil.DeckBuilder;
 
 public class AnakinTest {
+    private final Anakin anakin = new Anakin();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-
-    private final Anakin anakin = new Anakin();
 
     @Test
     public void constructor() {
@@ -109,6 +109,8 @@ public class AnakinTest {
         }
 
         @Override
-        public boolean isInsideDeck(){ return false;}
+        public boolean isInsideDeck() {
+            return false;
+        }
     }
 }

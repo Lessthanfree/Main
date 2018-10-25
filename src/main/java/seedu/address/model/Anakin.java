@@ -32,14 +32,14 @@ public class Anakin implements ReadOnlyAnakin {
      *
      * Note that non-static init blocks are not recommended to use. There are other ways to avoid duplication
      *   among constructors.
-     */
-    {
+     */ {
         decks = new UniqueDeckList();
         cards = new UniqueCardList();
         displayedCards = new UniqueCardList();
     }
 
-    public Anakin() { }
+    public Anakin() {
+    }
 
     /**
      * Creates an Anakin using the Decks in the {@code toBeCopied}

@@ -67,8 +67,8 @@ public class ChangeDeckCommandTest {
 //    }
 
     @Test
-    public void execute_validLeaveDeck_success(){
-        Model executedModel = new ModelManager(model.getAnakin(),new UserPrefs());
+    public void execute_validLeaveDeck_success() {
+        Model executedModel = new ModelManager(model.getAnakin(), new UserPrefs());
         Deck deckToEnter = model.getFilteredDeckList().get(INDEX_FIRST_DECK.getZeroBased());
         ChangeDeckCommand cdCommand = new ChangeDeckCommand();
 
@@ -84,7 +84,7 @@ public class ChangeDeckCommandTest {
     }
 
     @Test
-    public void execute_invalidLeaveDeck_throwsCommandException(){
+    public void execute_invalidLeaveDeck_throwsCommandException() {
         ChangeDeckCommand cdCommand = new ChangeDeckCommand();
 
         String expectedException = String.format(AddressbookMessages.MESSAGE_NOT_INSIDE_DECK);

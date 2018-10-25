@@ -20,8 +20,17 @@ import seedu.address.model.anakindeck.Name;
 public class NewDeckCommandParser implements ParserInterface<NewDeckCommand> {
 
     /**
+     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
+     * {@code ArgumentMultimap}.
+     */
+    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
+        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
+    }
+
+    /**
      * Parses the given {@code String} of arguments in the context of the AddCommand
      * and returns an AddCommand object for execution.
+     *
      * @throws ParseException if the user input does not conform the expected format
      */
     public NewDeckCommand parse(String args) throws ParseException {
@@ -38,14 +47,6 @@ public class NewDeckCommandParser implements ParserInterface<NewDeckCommand> {
         Deck deck = new Deck(name);
 
         return new NewDeckCommand(deck);
-    }
-
-    /**
-     * Returns true if none of the prefixes contains empty {@code Optional} values in the given
-     * {@code ArgumentMultimap}.
-     */
-    private static boolean arePrefixesPresent(ArgumentMultimap argumentMultimap, Prefix... prefixes) {
-        return Stream.of(prefixes).allMatch(prefix -> argumentMultimap.getValue(prefix).isPresent());
     }
 
 }

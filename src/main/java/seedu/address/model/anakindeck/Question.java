@@ -4,8 +4,8 @@ import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.AppUtil.checkArgument;
 
 /**
- *  Represents a Card's question in the deck.
- *  Guarantees: immutable; is valid as declared in {@link #isValidQuestion(String)}
+ * Represents a Card's question in the deck.
+ * Guarantees: immutable; is valid as declared in {@link #isValidQuestion(String)}
  */
 public class Question {
     public static final String MESSAGE_QUESTION_CONSTRAINTS =

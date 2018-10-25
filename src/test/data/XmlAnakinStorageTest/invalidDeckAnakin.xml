@@ -2,7 +2,7 @@
 <anakin>
     <!--Deck with invalid name field-->
     <decks>
-        <name> </name>
+        <name></name>
         <cards>
             <question>How is</question>
             <answer>Gamora</answer>

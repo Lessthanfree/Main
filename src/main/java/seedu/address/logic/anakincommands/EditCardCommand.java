@@ -14,7 +14,6 @@ import seedu.address.commons.util.CollectionUtil;
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
-
 import seedu.address.model.Model;
 import seedu.address.model.anakindeck.Answer;
 import seedu.address.model.anakindeck.Card;
@@ -44,7 +43,7 @@ public class EditCardCommand extends Command {
     private final EditCardDescriptor editCardDescriptor;
 
     /**
-     * @param index of the card in the deck to edit
+     * @param index              of the card in the deck to edit
      * @param editCardDescriptor details to edit the card with
      */
     public EditCardCommand(Index index, EditCardDescriptor editCardDescriptor) {
@@ -53,6 +52,19 @@ public class EditCardCommand extends Command {
 
         this.index = index;
         this.editCardDescriptor = new EditCardDescriptor(editCardDescriptor);
+    }
+
+    /**
+     * Creates and returns a {@code Card} with the details of {@code cardToEdit}
+     * edited with {@code editCardDescriptor}.
+     */
+    private static Card createEditedCard(Card cardToEdit, EditCardDescriptor editCardDescriptor) {
+        assert cardToEdit != null;
+
+        Question updatedQuestion = editCardDescriptor.getQuestion().orElse(cardToEdit.getQuestion());
+        Answer updatedAnswer = editCardDescriptor.getAnswer().orElse(cardToEdit.getAnswer());
+
+        return new Card(updatedQuestion, updatedAnswer);
     }
 
     @Override
@@ -76,19 +88,6 @@ public class EditCardCommand extends Command {
         // TODO: Check that card changes are saved when committing
         model.commitAnakin();
         return new CommandResult(String.format(MESSAGE_EDIT_CARD_SUCCESS, editedCard));
-    }
-
-    /**
-     * Creates and returns a {@code Card} with the details of {@code cardToEdit}
-     * edited with {@code editCardDescriptor}.
-     */
-    private static Card createEditedCard(Card cardToEdit, EditCardDescriptor editCardDescriptor) {
-        assert cardToEdit != null;
-
-        Question updatedQuestion = editCardDescriptor.getQuestion().orElse(cardToEdit.getQuestion());
-        Answer updatedAnswer = editCardDescriptor.getAnswer().orElse(cardToEdit.getAnswer());
-
-        return new Card(updatedQuestion, updatedAnswer);
     }
 
     @Override
@@ -117,7 +116,8 @@ public class EditCardCommand extends Command {
         private Question question;
         private Answer answer;
 
-        public EditCardDescriptor() {}
+        public EditCardDescriptor() {
+        }
 
         /**
          * Copy constructor.
@@ -134,20 +134,20 @@ public class EditCardCommand extends Command {
             return CollectionUtil.isAnyNonNull(question, answer);
         }
 
-        public void setQuestion(Question question) {
-            this.question = question;
-        }
-
         public Optional<Question> getQuestion() {
             return Optional.ofNullable(question);
         }
 
-        public void setAnswer(Answer answer) {
-            this.answer = answer;
+        public void setQuestion(Question question) {
+            this.question = question;
         }
 
         public Optional<Answer> getAnswer() {
             return Optional.ofNullable(answer);
+        }
+
+        public void setAnswer(Answer answer) {
+            this.answer = answer;
         }
 
         @Override

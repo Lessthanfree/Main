@@ -30,15 +30,14 @@ import seedu.address.logic.commands.UndoCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.model.person.Person;
-import seedu.address.testutil.AddressbookPersonBuilder;
 import seedu.address.testutil.AddressbookEditPersonDescriptorBuilder;
+import seedu.address.testutil.AddressbookPersonBuilder;
 import seedu.address.testutil.AddressbookPersonUtil;
 
 public class AddressBookParserTest {
+    private final AddressBookParser parser = new AddressBookParser();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-
-    private final AddressBookParser parser = new AddressBookParser();
 
     @Test
     public void parseCommand_add() throws Exception {

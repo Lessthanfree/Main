@@ -25,7 +25,8 @@ public class DeckListPanelHandle extends NodeHandle<ListView<Deck>> {
     /**
      * Returns a handle to the selected {@code DeckCardHandle}.
      * A maximum of 1 item can be selected at any time.
-     * @throws AssertionError if no card is selected, or more than 1 card is selected.
+     *
+     * @throws AssertionError        if no card is selected, or more than 1 card is selected.
      * @throws IllegalStateException if the selected card is currently not in the scene graph.
      */
     public DeckCardHandle getHandleToSelectedCard() {
@@ -99,6 +100,7 @@ public class DeckListPanelHandle extends NodeHandle<ListView<Deck>> {
 
     /**
      * Returns the deck card handle of a deck associated with the {@code index} in the list.
+     *
      * @throws IllegalStateException if the selected deck card is currently not in the scene graph.
      */
     public DeckCardHandle getDeckCardHandle(int index) {

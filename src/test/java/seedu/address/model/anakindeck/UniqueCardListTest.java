@@ -14,15 +14,15 @@ import java.util.List;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+
 import seedu.address.model.anakindeck.anakinexceptions.CardNotFoundException;
 import seedu.address.model.anakindeck.anakinexceptions.DuplicateCardException;
 import seedu.address.testutil.CardBuilder;
 
 public class UniqueCardListTest {
+    private final UniqueCardList uniqueCardList = new UniqueCardList();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-
-    private final UniqueCardList uniqueCardList = new UniqueCardList();
 
     @Test
     public void contains_nullCard_throwsNullPointerException() {

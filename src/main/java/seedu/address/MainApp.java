@@ -52,6 +52,9 @@ public class MainApp extends Application {
     protected Model model;
     protected Storage storage;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void init() throws Exception {
@@ -203,9 +206,5 @@ public class MainApp extends Application {
     public void handleExitAppRequestEvent(ExitAppRequestEvent event) {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         stop();
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

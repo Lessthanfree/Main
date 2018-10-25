@@ -71,12 +71,12 @@ public class EditCardParserTest {
 
         // invalid question followed by valid answer
         assertParseFailure(parser, "1" + INVALID_CARD_QUESTION_ARGS +
-            VALID_CARD_ANSWER_ARGS, Question.MESSAGE_QUESTION_CONSTRAINTS);
+                VALID_CARD_ANSWER_ARGS, Question.MESSAGE_QUESTION_CONSTRAINTS);
 
         // valid question followed by invalid question. The test case for invalid question followed by valid question
         // is tested at {@code parse_invalidValueFollowedByValidValue_success()}
         assertParseFailure(parser, "1" + VALID_CARD_QUESTION_ARGS +
-            " " + INVALID_CARD_QUESTION_ARGS,
+                        " " + INVALID_CARD_QUESTION_ARGS,
                 Question.MESSAGE_QUESTION_CONSTRAINTS);
 
         // multiple invalid values, but only the first invalid value is captured
@@ -139,7 +139,7 @@ public class EditCardParserTest {
         // no other valid values specified
         Index targetIndex = INDEX_FIRST_CARD;
         String userInput = targetIndex.getOneBased() + "" +
-                INVALID_CARD_QUESTION_ARGS  +
+                INVALID_CARD_QUESTION_ARGS +
                 VALID_CARD_QUESTION_ARGS;
         EditCardDescriptor descriptor = new EditCardDescriptorBuilder()
                 .withQuestion(VALID_QUESTION_A).build();
@@ -147,8 +147,8 @@ public class EditCardParserTest {
         assertParseSuccess(parser, userInput, expectedCommand);
 
         // other valid values specified
-        userInput = targetIndex.getOneBased() +  "" +
-                INVALID_CARD_QUESTION_ARGS  +
+        userInput = targetIndex.getOneBased() + "" +
+                INVALID_CARD_QUESTION_ARGS +
                 VALID_CARD_ANSWER_ARGS +
                 VALID_CARD_QUESTION_ARGS;
         descriptor = new EditCardDescriptorBuilder()

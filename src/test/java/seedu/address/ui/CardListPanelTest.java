@@ -3,9 +3,9 @@ package seedu.address.ui;
 import static java.time.Duration.ofMillis;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
+import static seedu.address.testutil.EventsUtil.postNow;
 import static seedu.address.testutil.TypicalCards.getTypicalCards;
 import static seedu.address.testutil.TypicalIndexes.INDEX_SECOND_CARD;
-import static seedu.address.testutil.EventsUtil.postNow;
 import static seedu.address.ui.testutil.GuiTestAssert.assertCardCardDisplaysCard;
 import static seedu.address.ui.testutil.GuiTestAssert.assertCardCardEquals;
 
