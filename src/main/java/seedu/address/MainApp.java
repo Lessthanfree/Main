@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.logging.Logger;
 
 import com.google.common.eventbus.Subscribe;
+
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
@@ -37,6 +38,7 @@ import seedu.address.ui.UiManager;
 /**
  * The main entry point to the application.
  */
+
 public class MainApp extends Application {
 
     public static final Version VERSION = new Version(0, 6, 0, true);

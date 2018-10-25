@@ -3,10 +3,10 @@ package seedu.address.logic.anakincommands;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
-import static seedu.address.logic.anakincommands.CommandTestUtil.TYPICAL_CARD_LIST;
-import static seedu.address.logic.anakincommands.CommandTestUtil.VALID_NAME_JOHN;
 import static seedu.address.logic.anakincommands.CommandTestUtil.DESC_AMY;
 import static seedu.address.logic.anakincommands.CommandTestUtil.DESC_BOB;
+import static seedu.address.logic.anakincommands.CommandTestUtil.TYPICAL_CARD_LIST;
+import static seedu.address.logic.anakincommands.CommandTestUtil.VALID_NAME_JOHN;
 import static seedu.address.logic.anakincommands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.anakincommands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.logic.anakincommands.CommandTestUtil.showDeckAtIndex;
@@ -17,6 +17,7 @@ import static seedu.address.testutil.TypicalDecks.getTypicalAnakin;
 import org.junit.Test;
 
 import seedu.address.commons.core.AddressbookMessages;
+import seedu.address.commons.core.Messages;
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.CommandHistory;
 import seedu.address.logic.anakincommands.EditDeckCommand.EditDeckDescriptor;
@@ -25,8 +26,8 @@ import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.anakindeck.Deck;
-import seedu.address.testutil.EditDeckDescriptorBuilder;
 import seedu.address.testutil.DeckBuilder;
+import seedu.address.testutil.EditDeckDescriptorBuilder;
 
 
 /**
@@ -131,7 +132,7 @@ public class EditDeckCommandTest {
         EditDeckDescriptor descriptor = new EditDeckDescriptorBuilder().withName(VALID_NAME_JOHN).build();
         EditDeckCommand editCommand = new EditDeckCommand(outOfBoundIndex, descriptor);
 
-        assertCommandFailure(editCommand, model, commandHistory, AddressbookMessages.MESSAGE_INVALID_DECK_DISPLAYED_INDEX);
+        assertCommandFailure(editCommand, model, commandHistory, Messages.MESSAGE_INVALID_DECK_DISPLAYED_INDEX);
     }
 
     /**
