@@ -24,9 +24,7 @@ public class NewCardCommandParserTest {
 
     @Test
     public void parse_allFieldsPresent_success() {
-        Card expectedCard = new CardBuilder().
-            withQuestion(VALID_QUESTION_A).
-            withAnswer(VALID_ANSWER_A).build();
+        Card expectedCard = new CardBuilder().withQuestion(VALID_QUESTION_A).withAnswer(VALID_ANSWER_A).build();
 
         // clean
         System.out.println("Valid args: " + VALID_CARD_A_ARGS);
@@ -50,8 +48,8 @@ public class NewCardCommandParserTest {
         assertParseFailure(parser, PREFIX_QUESTION + VALID_QUESTION_A, expectedMessage);
 
         // No space between args
-        assertParseFailure(parser, PREFIX_QUESTION + VALID_QUESTION_A +
-            PREFIX_QUESTION + VALID_QUESTION_A, expectedMessage);
+        assertParseFailure(parser, PREFIX_QUESTION + VALID_QUESTION_A + PREFIX_QUESTION + VALID_QUESTION_A,
+            expectedMessage);
 
         // No argument
         assertParseFailure(parser, "", expectedMessage);
@@ -72,7 +70,6 @@ public class NewCardCommandParserTest {
         assertParseFailure(parser, PREFIX_ANSWER + INVALID_ANSWER, expectedMessage);
 
         // non-empty preamble
-        assertParseFailure(parser, PREAMBLE_NON_EMPTY + VALID_CARD_A_ARGS,
-            expectedMessage);
+        assertParseFailure(parser, PREAMBLE_NON_EMPTY + VALID_CARD_A_ARGS, expectedMessage);
     }
 }

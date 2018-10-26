@@ -36,6 +36,7 @@ import seedu.address.testutil.AddressbookPersonUtil;
 
 public class AddressBookParserTest {
     private final AddressBookParser parser = new AddressBookParser();
+
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 

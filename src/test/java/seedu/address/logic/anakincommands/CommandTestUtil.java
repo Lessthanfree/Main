@@ -46,8 +46,8 @@ public class CommandTestUtil {
     public static final String INVALID_ANSWER = " ";
 
 
-    public static final String VALID_CARD_A_ARGS = " " + PREFIX_QUESTION +
-        VALID_QUESTION_A + " " + PREFIX_ANSWER + VALID_ANSWER_A;
+    public static final String VALID_CARD_A_ARGS = " " + PREFIX_QUESTION + VALID_QUESTION_A + " " + PREFIX_ANSWER
+        + VALID_ANSWER_A;
 
     public static final String VALID_CARD_QUESTION_ARGS = " " + PREFIX_QUESTION + VALID_QUESTION_A;
     public static final String VALID_CARD_ANSWER_ARGS = " " + PREFIX_ANSWER + VALID_ANSWER_A;

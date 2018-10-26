@@ -26,6 +26,13 @@ public class ModelHelper {
     }
 
     /**
+     * @see ModelHelper#setFilteredDeckList(Model, List)
+     */
+    public static void setFilteredDeckList(Model model, Deck... toDisplay) {
+        setFilteredDeckList(model, Arrays.asList(toDisplay));
+    }
+
+    /**
      * Updates {@code model}'s filtered list to display only {@code toDisplay}.
      */
     public static void setFilteredCardList(Model model, List<Card> cardsToDisplay) {
@@ -35,18 +42,12 @@ public class ModelHelper {
     }
 
     /**
-     * @see ModelHelper#setFilteredDeckList(Model, List)
-     */
-    public static void setFilteredDeckList(Model model, Deck... toDisplay) {
-        setFilteredDeckList(model, Arrays.asList(toDisplay));
-    }
-
-    /**
      * @see ModelHelper#setFilteredCardList(Model, List)
      */
     public static void setFilteredCardList(Model model, Card... toDisplay) {
         setFilteredCardList(model, Arrays.asList(toDisplay));
     }
+
 
     /**
      * Returns a predicate that evaluates to true if this {@code Deck} equals to {@code other}.

@@ -49,8 +49,8 @@ public class AnakinTest {
     @Test
     public void resetData_withDuplicateDecks_throwsDuplicateDeckException() {
         // Two decks with the same identity field
-        Deck editedDeck_A = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
-        List<Deck> newDecks = Arrays.asList(DECK_A, editedDeck_A);
+        Deck editedDeckA = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
+        List<Deck> newDecks = Arrays.asList(DECK_A, editedDeckA);
         AnakinStub newData = new AnakinStub(newDecks);
 
         thrown.expect(DuplicateDeckException.class);
@@ -77,8 +77,8 @@ public class AnakinTest {
     @Test
     public void hasDeck_deckWithSameIdentityFieldsInAnakin_returnsTrue() {
         anakin.addDeck(DECK_A);
-        Deck editedDeck_A = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
-        assertTrue(anakin.hasDeck(editedDeck_A));
+        Deck editedDeckA = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
+        assertTrue(anakin.hasDeck(editedDeckA));
     }
 
     @Test

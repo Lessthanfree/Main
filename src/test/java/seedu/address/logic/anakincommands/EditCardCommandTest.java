@@ -58,8 +58,7 @@ public class EditCardCommandTest {
 
         CardBuilder anakinCardInList = new CardBuilder(lastCard);
         Card editedCard = anakinCardInList
-            .withQuestion(VALID_QUESTION_A).withAnswer(VALID_ANSWER_A)
-            .build();
+            .withQuestion(VALID_QUESTION_A).withAnswer(VALID_ANSWER_A).build();
 
         EditCardDescriptor descriptor = new EditCardDescriptorBuilder()
             .withQuestion(VALID_QUESTION_A)
@@ -142,33 +141,33 @@ public class EditCardCommandTest {
      * but smaller than size of address book
      */
     // TODO: When filter functions are available write filter test
-//    @Test
-//    public void execute_invalidAnakinCardIndexFilteredList_failure() {
-//        showCardAtIndex(model, INDEX_FIRST_CARD);
-//        Index outOfBoundIndex = INDEX_SECOND_CARD;
-//        // ensures that outOfBoundIndex is still in bounds of address book list
-//        assertTrue(outOfBoundIndex.getZeroBased() < model.getAnakin().getCardList().size());
-//
-//        EditCardCommand anakinEditCardCommand = new EditCardCommand(outOfBoundIndex,
-//                new EditCardDescriptorBuilder().withQuestion(VALID_QUESTION_A).build());
-//
-//        assertCommandFailure(anakinEditCardCommand, model, commandHistory, AddressbookMessages
-// .MESSAGE_INVALID_CARD_DISPLAYED_INDEX);
-//    }
+    //    @Test
+    //    public void execute_invalidAnakinCardIndexFilteredList_failure() {
+    //        showCardAtIndex(model, INDEX_FIRST_CARD);
+    //        Index outOfBoundIndex = INDEX_SECOND_CARD;
+    //        // ensures that outOfBoundIndex is still in bounds of address book list
+    //        assertTrue(outOfBoundIndex.getZeroBased() < model.getAnakin().getCardList().size());
+    //
+    //        EditCardCommand anakinEditCardCommand = new EditCardCommand(outOfBoundIndex,
+    //                new EditCardDescriptorBuilder().withQuestion(VALID_QUESTION_A).build());
+    //
+    //        assertCommandFailure(anakinEditCardCommand, model, commandHistory, AddressbookMessages
+    // .MESSAGE_INVALID_CARD_DISPLAYED_INDEX);
+    //    }
     @Test
     public void executeUndoRedo_validIndexUnfilteredList_success() throws Exception {
         Card editedCard = new CardBuilder().build();
-        Card anakincardToEdit = model.getFilteredCardList().get(INDEX_FIRST_CARD.getZeroBased());
+        Card anakinCardToEdit = model.getFilteredCardList().get(INDEX_FIRST_CARD.getZeroBased());
         EditCardDescriptor descriptor = new EditCardDescriptorBuilder(editedCard).build();
         EditCardCommand anakinEditCardCommand = new EditCardCommand(INDEX_FIRST_CARD, descriptor);
         Model expectedModel = new ModelManager(new Anakin(model.getAnakin()), new UserPrefs());
-        expectedModel.updateCard(anakincardToEdit, editedCard);
+        expectedModel.updateCard(anakinCardToEdit, editedCard);
         expectedModel.commitAnakin();
 
         // edit -> first anakincard edited
         anakinEditCardCommand.execute(model, commandHistory);
 
-        // undo -> reverts addressbook back to previous state and filtered anakincard list to show all anakincards
+        // undo -> reverts anakin back to previous state and filtered anakincard list to show all anakincards
         expectedModel.undoAnakin();
         assertCommandSuccess(new UndoCommand(), model, commandHistory,
             seedu.address.logic.commands.UndoCommand.MESSAGE_SUCCESS, expectedModel);
@@ -205,43 +204,43 @@ public class EditCardCommandTest {
      */
 
     //TODO when undo/redo is supported
-//    @Test
-//    public void executeUndoRedo_validIndexFilteredList_sameAnakinCardEdited() throws Exception {
-//        Card editedAnakinCard = new CardBuilder().build();
-//        EditCardDescriptor descriptor = new EditCardDescriptorBuilder(editedAnakinCard).build();
-//        EditCardCommand anakinEditCardCommand = new EditCardCommand(INDEX_FIRST_CARD, descriptor);
-//        Model expectedModel = new ModelManager(new Anakin(model.getAnakin()), new UserPrefs());
-//
-//        //showAnakinCardAtIndex(model, INDEX_SECOND_CARD);
-//        Card anakincardToEdit = model.getFilteredCardList().get(INDEX_FIRST_CARD.getZeroBased());
-//        expectedModel.updateCard(anakincardToEdit, editedAnakinCard);
-//        expectedModel.commitAnakin();
-//
-//        // edit -> edits second anakincard in unfiltered anakincard list / first anakincard in filtered anakincard
-// list
-//        anakinEditCardCommand.execute(model, commandHistory);
-//
-//        // undo -> reverts addressbook back to previous state and filtered anakincard list to show all anakincards
-//        expectedModel.undoAnakin();
-//        assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
-//
-//        assertNotEquals(model.getFilteredCardList().get(INDEX_FIRST_CARD.getZeroBased()), anakincardToEdit);
-//        // redo -> edits same second anakincard in unfiltered anakincard list
-//        expectedModel.redoAnakin();
-//        assertCommandSuccess(new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
-//    }
+    //    @Test
+    //    public void executeUndoRedo_validIndexFilteredList_sameAnakinCardEdited() throws Exception {
+    //        Card editedAnakinCard = new CardBuilder().build();
+    //        EditCardDescriptor descriptor = new EditCardDescriptorBuilder(editedAnakinCard).build();
+    //        EditCardCommand anakinEditCardCommand = new EditCardCommand(INDEX_FIRST_CARD, descriptor);
+    //        Model expectedModel = new ModelManager(new Anakin(model.getAnakin()), new UserPrefs());
+    //
+    //        //showAnakinCardAtIndex(model, INDEX_SECOND_CARD);
+    //        Card anakinCardToEdit = model.getFilteredCardList().get(INDEX_FIRST_CARD.getZeroBased());
+    //        expectedModel.updateCard(anakinCardToEdit, editedAnakinCard);
+    //        expectedModel.commitAnakin();
+    //
+    //        // edit -> edits second anakincard in unfiltered anakincard list / first anakincard in filtered anakincard
+    // list
+    //        anakinEditCardCommand.execute(model, commandHistory);
+    //
+    //        // undo -> reverts addressbook back to previous state and filtered anakincard list to show all anakincards
+    //        expectedModel.undoAnakin();
+    //        assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
+    //
+    //        assertNotEquals(model.getFilteredCardList().get(INDEX_FIRST_CARD.getZeroBased()), anakinCardToEdit);
+    //        // redo -> edits same second anakincard in unfiltered anakincard list
+    //        expectedModel.redoAnakin();
+    //        assertCommandSuccess(new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
+    //    }
     @Test
     public void equals() {
-        EditCardDescriptor CARD_A_DESC = new EditCardDescriptorBuilder()
+        EditCardDescriptor cardDesc = new EditCardDescriptorBuilder()
             .withAnswer(VALID_ANSWER_A).withQuestion(VALID_QUESTION_A)
             .build();
-        EditCardDescriptor CARD_B_DESC = new EditCardDescriptorBuilder()
+        EditCardDescriptor cardDescB = new EditCardDescriptorBuilder()
             .withAnswer(VALID_ANSWER_B).withQuestion(VALID_QUESTION_B)
             .build();
-        final EditCardCommand standardCommand = new EditCardCommand(INDEX_FIRST_CARD, CARD_A_DESC);
+        final EditCardCommand standardCommand = new EditCardCommand(INDEX_FIRST_CARD, cardDesc);
 
         // same values -> returns true
-        EditCardDescriptor copyDescriptor = new EditCardDescriptor(CARD_A_DESC);
+        EditCardDescriptor copyDescriptor = new EditCardDescriptor(cardDesc);
         EditCardCommand commandWithSameValues = new EditCardCommand(INDEX_FIRST_CARD, copyDescriptor);
         assertTrue(standardCommand.equals(commandWithSameValues));
 
@@ -255,10 +254,10 @@ public class EditCardCommandTest {
         assertFalse(standardCommand.equals(new ClearCommand()));
 
         // different index -> returns false
-        assertFalse(standardCommand.equals(new EditCardCommand(INDEX_SECOND_CARD, CARD_A_DESC)));
+        assertFalse(standardCommand.equals(new EditCardCommand(INDEX_SECOND_CARD, cardDesc)));
 
         // different descriptor -> returns false
-        assertFalse(standardCommand.equals(new EditCardCommand(INDEX_FIRST_CARD, CARD_B_DESC)));
+        assertFalse(standardCommand.equals(new EditCardCommand(INDEX_FIRST_CARD, cardDescB)));
     }
 
 }
