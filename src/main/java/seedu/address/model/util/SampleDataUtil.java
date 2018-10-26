@@ -29,10 +29,11 @@ public class SampleDataUtil {
         sampleAnakin.addCard(new Card(new Question("What can one catch that is not thrown?"),
                                          new Answer("A cold")));
         sampleAnakin.addCard(new Card(new Question("What is it that if you have, you want to share me, "
-                                                       + "and if you share, you do not have?"), new Answer("A secret")));
+                                        + "and if you share, you do not have?"), new Answer("A secret")));
         sampleAnakin.addCard(new Card(new Question("If it takes eight men ten hours to build a wall, "
-                                                       + "how long would it take four men?"), new Answer("No time, because the wall is already built"
-                                                                                                             + ".")));
+                                        + "how long would it take four men?"),
+                                        new Answer("No time, because the wall is already built"
+                                        + ".")));
         return sampleAnakin;
     }
 
