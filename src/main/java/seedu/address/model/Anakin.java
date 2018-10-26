@@ -26,7 +26,7 @@ public class Anakin implements ReadOnlyAnakin {
     // Represents the list of cards displayed on the UI
     private UniqueCardList displayedCards;
 
-    /*
+     /*
      * The 'unusual' code block below is an non-static initialization block, sometimes used to avoid duplication
      * between constructors. See https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html
      *
