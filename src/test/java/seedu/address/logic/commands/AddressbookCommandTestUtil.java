@@ -76,8 +76,8 @@ public class AddressbookCommandTestUtil {
      * - the {@code actualCommandHistory} remains unchanged.
      */
     public static void assertCommandSuccess(Command command, AddressbookModel actualAddressbookModel,
-                                            CommandHistory actualCommandHistory,
-                                            String expectedMessage, AddressbookModel expectedAddressbookModel) {
+        CommandHistory actualCommandHistory,
+        String expectedMessage, AddressbookModel expectedAddressbookModel) {
         CommandHistory expectedCommandHistory = new CommandHistory(actualCommandHistory);
         try {
             CommandResult result = command.execute(actualAddressbookModel, actualCommandHistory);
@@ -97,8 +97,8 @@ public class AddressbookCommandTestUtil {
      * - {@code actualCommandHistory} remains unchanged.
      */
     public static void assertCommandFailure(Command command, AddressbookModel actualAddressbookModel,
-                                            CommandHistory actualCommandHistory,
-                                            String expectedMessage) {
+        CommandHistory actualCommandHistory,
+        String expectedMessage) {
         // we are unable to defensively copy the model for comparison later, so we can
         // only do so by copying its components.
         AddressBook expectedAddressBook = new AddressBook(actualAddressbookModel.getAddressBook());

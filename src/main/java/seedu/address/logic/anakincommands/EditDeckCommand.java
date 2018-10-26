@@ -27,12 +27,12 @@ public class EditDeckCommand extends Command {
     public static final String COMMAND_WORD = "editdeck";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the deck identified "
-            + "by the index number used in the displayed deck list. "
-            + "Changes its name to NAME.\n"
-            + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_NAME + "NAME]...\n "
-            + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_NAME + "[NAME]";
+        + "by the index number used in the displayed deck list. "
+        + "Changes its name to NAME.\n"
+        + "Parameters: INDEX (must be a positive integer) "
+        + "[" + PREFIX_NAME + "NAME]...\n "
+        + "Example: " + COMMAND_WORD + " 1 "
+        + PREFIX_NAME + "[NAME]";
 
     public static final String MESSAGE_EDIT_DECK_SUCCESS = "Edited Deck: %1$s";
     public static final String MESSAGE_DECK_NOT_EDITED = "Index of Deck to edit and Name to edit to must be provided.";
@@ -42,7 +42,7 @@ public class EditDeckCommand extends Command {
     private final EditDeckDescriptor editDeckDescriptor;
 
     /**
-     * @param index              of the deck in the filtered deck list to edit
+     * @param index of the deck in the filtered deck list to edit
      * @param editDeckDescriptor details to edit the deck with
      */
     public EditDeckCommand(Index index, EditDeckDescriptor editDeckDescriptor) {
@@ -102,7 +102,7 @@ public class EditDeckCommand extends Command {
         // state check
         EditDeckCommand e = (EditDeckCommand) other;
         return index.equals(e.index)
-                && editDeckDescriptor.equals(e.editDeckDescriptor);
+            && editDeckDescriptor.equals(e.editDeckDescriptor);
     }
 
     /**
@@ -176,7 +176,7 @@ public class EditDeckCommand extends Command {
             EditDeckDescriptor e = (EditDeckDescriptor) other;
 
             return getName().equals(e.getName())
-                    && getCards().equals(e.getCards());
+                && getCards().equals(e.getCards());
         }
     }
 }

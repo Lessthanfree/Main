@@ -59,7 +59,7 @@ public class AddressbookLogicManagerTest {
      * @see #assertCommandBehavior(Class, String, String, AddressbookModel)
      */
     private void assertCommandSuccess(String inputCommand, String expectedMessage,
-                                      AddressbookModel expectedAddressbookModel) {
+        AddressbookModel expectedAddressbookModel) {
         assertCommandBehavior(null, inputCommand, expectedMessage, expectedAddressbookModel);
     }
 
@@ -99,7 +99,7 @@ public class AddressbookLogicManagerTest {
      * - {@code expectedAddressbookModel}'s address book was saved to the storage file.
      */
     private void assertCommandBehavior(Class<?> expectedException, String inputCommand,
-                                       String expectedMessage, AddressbookModel expectedAddressbookModel) {
+        String expectedMessage, AddressbookModel expectedAddressbookModel) {
 
         try {
             CommandResult result = addressbookLogic.execute(inputCommand);

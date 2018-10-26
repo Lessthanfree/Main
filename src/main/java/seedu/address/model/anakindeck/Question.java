@@ -46,8 +46,8 @@ public class Question {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                   || (other instanceof Question // instanceof handles nulls
-                           && fullQuestion.equals(((Question) other).fullQuestion)); // state check
+            || (other instanceof Question // instanceof handles nulls
+            && fullQuestion.equals(((Question) other).fullQuestion)); // state check
     }
 
     @Override

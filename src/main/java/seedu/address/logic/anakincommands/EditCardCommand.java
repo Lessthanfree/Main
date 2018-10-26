@@ -27,13 +27,13 @@ public class EditCardCommand extends Command {
     public static final String COMMAND_WORD = "editcard";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the card "
-            + "by the index number used in the deck. "
-            + "Existing values will be overwritten by the input values.\n"
-            + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_QUESTION + "QUESTION] "
-            + "[" + PREFIX_ANSWER + "ANSWER]\n"
-            + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_QUESTION + "Why is Earth round?";
+        + "by the index number used in the deck. "
+        + "Existing values will be overwritten by the input values.\n"
+        + "Parameters: INDEX (must be a positive integer) "
+        + "[" + PREFIX_QUESTION + "QUESTION] "
+        + "[" + PREFIX_ANSWER + "ANSWER]\n"
+        + "Example: " + COMMAND_WORD + " 1 "
+        + PREFIX_QUESTION + "Why is Earth round?";
 
     public static final String MESSAGE_EDIT_CARD_SUCCESS = "Edited Card: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
@@ -43,7 +43,7 @@ public class EditCardCommand extends Command {
     private final EditCardDescriptor editCardDescriptor;
 
     /**
-     * @param index              of the card in the deck to edit
+     * @param index of the card in the deck to edit
      * @param editCardDescriptor details to edit the card with
      */
     public EditCardCommand(Index index, EditCardDescriptor editCardDescriptor) {
@@ -105,7 +105,7 @@ public class EditCardCommand extends Command {
         // state check
         EditCardCommand e = (EditCardCommand) other;
         return index.equals(e.index)
-                && editCardDescriptor.equals(e.editCardDescriptor);
+            && editCardDescriptor.equals(e.editCardDescriptor);
     }
 
     /**
@@ -166,7 +166,7 @@ public class EditCardCommand extends Command {
             EditCardDescriptor e = (EditCardDescriptor) other;
 
             return getQuestion().equals(e.getQuestion())
-                    && getAnswer().equals(e.getAnswer());
+                && getAnswer().equals(e.getAnswer());
         }
     }
 }

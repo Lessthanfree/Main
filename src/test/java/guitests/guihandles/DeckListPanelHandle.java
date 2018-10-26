@@ -26,7 +26,7 @@ public class DeckListPanelHandle extends NodeHandle<ListView<Deck>> {
      * Returns a handle to the selected {@code DeckCardHandle}.
      * A maximum of 1 item can be selected at any time.
      *
-     * @throws AssertionError        if no card is selected, or more than 1 card is selected.
+     * @throws AssertionError if no card is selected, or more than 1 card is selected.
      * @throws IllegalStateException if the selected card is currently not in the scene graph.
      */
     public DeckCardHandle getHandleToSelectedCard() {
@@ -37,10 +37,10 @@ public class DeckListPanelHandle extends NodeHandle<ListView<Deck>> {
         }
 
         return getAllCardNodes().stream()
-                .map(DeckCardHandle::new)
-                .filter(handle -> handle.equals(selectedDeckList.get(0)))
-                .findFirst()
-                .orElseThrow(IllegalStateException::new);
+            .map(DeckCardHandle::new)
+            .filter(handle -> handle.equals(selectedDeckList.get(0)))
+            .findFirst()
+            .orElseThrow(IllegalStateException::new);
     }
 
     /**
@@ -105,10 +105,10 @@ public class DeckListPanelHandle extends NodeHandle<ListView<Deck>> {
      */
     public DeckCardHandle getDeckCardHandle(int index) {
         return getAllCardNodes().stream()
-                .map(DeckCardHandle::new)
-                .filter(handle -> handle.equals(getAnakinDeck(index)))
-                .findFirst()
-                .orElseThrow(IllegalStateException::new);
+            .map(DeckCardHandle::new)
+            .filter(handle -> handle.equals(getAnakinDeck(index)))
+            .findFirst()
+            .orElseThrow(IllegalStateException::new);
     }
 
     private Deck getAnakinDeck(int index) {
@@ -148,7 +148,7 @@ public class DeckListPanelHandle extends NodeHandle<ListView<Deck>> {
             return lastRememberedSelectedDeckCard.isPresent();
         } else {
             return !lastRememberedSelectedDeckCard.isPresent()
-                    || !lastRememberedSelectedDeckCard.get().equals(selectedItems.get(0));
+                || !lastRememberedSelectedDeckCard.get().equals(selectedItems.get(0));
         }
     }
 

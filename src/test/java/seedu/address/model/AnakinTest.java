@@ -24,10 +24,9 @@ import seedu.address.model.anakindeck.anakinexceptions.DuplicateDeckException;
 import seedu.address.testutil.DeckBuilder;
 
 public class AnakinTest {
+    private final Anakin anakin = new Anakin();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
-
-    private final Anakin anakin = new Anakin();
 
     @Test
     public void constructor() {

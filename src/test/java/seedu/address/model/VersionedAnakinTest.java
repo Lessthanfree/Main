@@ -240,9 +240,9 @@ public class VersionedAnakinTest {
      * and states after {@code versionedAnakin#currentStatePointer} is equal to {@code expectedStatesAfterPointer}.
      */
     private void assertAnakinListStatus(VersionedAnakin versionedAnakin,
-                                        List<ReadOnlyAnakin> expectedStatesBeforePointer,
-                                        ReadOnlyAnakin expectedCurrentState,
-                                        List<ReadOnlyAnakin> expectedStatesAfterPointer) {
+        List<ReadOnlyAnakin> expectedStatesBeforePointer,
+        ReadOnlyAnakin expectedCurrentState,
+        List<ReadOnlyAnakin> expectedStatesAfterPointer) {
         // check state currently pointing at is correct
         assertEquals(new Anakin(versionedAnakin), expectedCurrentState);
 

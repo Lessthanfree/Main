@@ -20,10 +20,10 @@ import seedu.address.model.anakindeck.anakinexceptions.DuplicateDeckException;
 import seedu.address.testutil.DeckBuilder;
 
 public class UniqueDeckListTest {
+    private final UniqueDeckList uniqueDeckList = new UniqueDeckList();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
-    private final UniqueDeckList uniqueDeckList = new UniqueDeckList();
     @Test
     public void contains_nullDeck_throwsNullPointerException() {
         thrown.expect(NullPointerException.class);

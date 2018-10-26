@@ -10,7 +10,7 @@
     </decks>
     <!-- Deck with invalid name-->
     <decks>
-        <name></name>
+        <name> </name>
         <cards>
             <question>but in the end</question>
             <answer>it does not even matter</answer>
