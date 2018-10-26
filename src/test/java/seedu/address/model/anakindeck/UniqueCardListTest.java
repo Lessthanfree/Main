@@ -42,10 +42,10 @@ public class UniqueCardListTest {
     }
 
     @Test
-    public void contains_cardWithSameIdentityFieldsInList_returnsTrue() {
+    public void contains_cardWithSameIdentityFieldsInList_success() {
         uniqueCardList.add(CARD_A);
-        Card editedCard_A = new CardBuilder(CARD_A).withAnswer(VALID_ANSWER_A).build();
-        assertTrue(uniqueCardList.contains(editedCard_A));
+        Card editedCardA = new CardBuilder(CARD_A).withAnswer(VALID_ANSWER_A).build();
+        assertTrue(uniqueCardList.contains(editedCardA));
     }
 
     @Test
@@ -91,10 +91,10 @@ public class UniqueCardListTest {
     @Test
     public void setCard_editedCardHasSameIdentity_success() {
         uniqueCardList.add(CARD_A);
-        Card editedCard_A = new CardBuilder(CARD_A).withAnswer(VALID_ANSWER_A).build();
-        uniqueCardList.setCard(CARD_A, editedCard_A);
+        Card editedCardA = new CardBuilder(CARD_A).withAnswer(VALID_ANSWER_A).build();
+        uniqueCardList.setCard(CARD_A, editedCardA);
         UniqueCardList expectedUniqueCardList = new UniqueCardList();
-        expectedUniqueCardList.add(editedCard_A);
+        expectedUniqueCardList.add(editedCardA);
         assertEquals(expectedUniqueCardList, uniqueCardList);
     }
 

@@ -86,8 +86,7 @@ public class EditCardParserTest {
     @Test
     public void parse_allFieldsSpecified_success() {
         Index targetIndex = INDEX_SECOND_CARD;
-        String userInput = targetIndex.getOneBased() +
-            VALID_CARD_QUESTION_ARGS + VALID_CARD_ANSWER_ARGS;
+        String userInput = targetIndex.getOneBased() + VALID_CARD_QUESTION_ARGS + VALID_CARD_ANSWER_ARGS;
 
         EditCardDescriptor descriptor = new EditCardDescriptorBuilder().withQuestion(VALID_QUESTION_A)
             .withAnswer(VALID_ANSWER_A).build();
@@ -108,8 +107,7 @@ public class EditCardParserTest {
 
         // Answer
         userInput = targetIndex.getOneBased() + VALID_CARD_ANSWER_ARGS;
-        descriptor = new EditCardDescriptorBuilder().
-            withAnswer(VALID_ANSWER_A).build();
+        descriptor = new EditCardDescriptorBuilder().withAnswer(VALID_ANSWER_A).build();
         expectedCommand = new EditCardCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
     }

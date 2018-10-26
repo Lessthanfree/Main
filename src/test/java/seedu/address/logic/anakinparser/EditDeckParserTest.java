@@ -60,8 +60,7 @@ public class EditDeckParserTest {
     @Test
     public void parse_repeatedFields_acceptsLast() {
         Index targetIndex = INDEX_FIRST_DECK;
-        String userInput = targetIndex.getOneBased() +
-            VALID_DECK_NAME_A_ARGS + VALID_DECK_NAME_B_ARGS;
+        String userInput = targetIndex.getOneBased() + VALID_DECK_NAME_A_ARGS + VALID_DECK_NAME_B_ARGS;
 
         EditDeckDescriptor descriptor = new EditDeckDescriptorBuilder()
             .withName(VALID_NAME_DECK_B).build();
@@ -74,8 +73,7 @@ public class EditDeckParserTest {
     public void parse_invalidValueFollowedByValidValue_success() {
         // no other valid values specified
         Index targetIndex = INDEX_FIRST_DECK;
-        String userInput = targetIndex.getOneBased() +
-            INVALID_DECK_NAME_ARGS + VALID_DECK_NAME_B_ARGS;
+        String userInput = targetIndex.getOneBased() + INVALID_DECK_NAME_ARGS + VALID_DECK_NAME_B_ARGS;
         EditDeckDescriptor descriptor = new EditDeckDescriptorBuilder()
             .withName(VALID_NAME_DECK_B).build();
         EditDeckCommand expectedCommand = new EditDeckCommand(targetIndex, descriptor);

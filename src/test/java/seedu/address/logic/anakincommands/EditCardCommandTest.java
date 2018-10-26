@@ -222,12 +222,14 @@ public class EditCardCommandTest {
     //
     //        // undo -> reverts addressbook back to previous state and filtered anakincard list to show all anakincards
     //        expectedModel.undoAnakin();
-    //        assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS, expectedModel);
+    //        assertCommandSuccess(new UndoCommand(), model, commandHistory, UndoCommand.MESSAGE_SUCCESS,
+    // expectedModel);
     //
     //        assertNotEquals(model.getFilteredCardList().get(INDEX_FIRST_CARD.getZeroBased()), anakinCardToEdit);
     //        // redo -> edits same second anakincard in unfiltered anakincard list
     //        expectedModel.redoAnakin();
-    //        assertCommandSuccess(new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS, expectedModel);
+    //        assertCommandSuccess(new RedoCommand(), model, commandHistory, RedoCommand.MESSAGE_SUCCESS,
+    // expectedModel);
     //    }
     @Test
     public void equals() {
