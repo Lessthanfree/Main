@@ -24,7 +24,6 @@ public class UniqueDeckListTest {
     public ExpectedException thrown = ExpectedException.none();
 
     private final UniqueDeckList uniqueDeckList = new UniqueDeckList();
-    
     @Test
     public void contains_nullDeck_throwsNullPointerException() {
         thrown.expect(NullPointerException.class);
