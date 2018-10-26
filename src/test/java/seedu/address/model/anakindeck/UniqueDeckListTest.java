@@ -20,9 +20,10 @@ import seedu.address.model.anakindeck.anakinexceptions.DuplicateDeckException;
 import seedu.address.testutil.DeckBuilder;
 
 public class UniqueDeckListTest {
-    private final UniqueDeckList uniqueDeckList = new UniqueDeckList();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+
+    private final UniqueDeckList uniqueDeckList = new UniqueDeckList();
 
     @Test
     public void contains_nullDeck_throwsNullPointerException() {
@@ -31,7 +32,7 @@ public class UniqueDeckListTest {
     }
 
     @Test
-    public void contains_deckNotInList_returnsfalse() {
+    public void contains_deckNotInList_returnsFalse() {
         assertFalse(uniqueDeckList.contains(DECK_A));
     }
 
@@ -42,7 +43,7 @@ public class UniqueDeckListTest {
     }
 
     @Test
-    public void contains_deckWithSameIdentityFieldsInList_returnstrue() {
+    public void contains_deckWithSameIdentityFieldsInList_returnsTrue() {
         uniqueDeckList.add(DECK_A);
         Deck editedDeckA = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
         assertTrue(uniqueDeckList.contains(editedDeckA));
