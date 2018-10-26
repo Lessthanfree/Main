@@ -20,9 +20,9 @@ import seedu.address.model.anakindeck.anakinexceptions.DuplicateCardException;
 import seedu.address.testutil.CardBuilder;
 
 public class UniqueCardListTest {
-    private final UniqueCardList uniqueCardList = new UniqueCardList();
     @Rule
     public ExpectedException thrown = ExpectedException.none();
+    private final UniqueCardList uniqueCardList = new UniqueCardList();
 
     @Test
     public void contains_nullCard_throwsNullPointerException() {
@@ -36,7 +36,7 @@ public class UniqueCardListTest {
     }
 
     @Test
-    public void contains_CardInList_returnsTrue() {
+    public void contains_cardInList_returnsTrue() {
         uniqueCardList.add(CARD_A);
         assertTrue(uniqueCardList.contains(CARD_A));
     }

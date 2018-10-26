@@ -36,7 +36,7 @@ public class UniqueDeckListTest {
     }
 
     @Test
-    public void contains_DeckInList_returnsTrue() {
+    public void contains_deckInList_returnsTrue() {
         uniqueDeckList.add(DECK_A);
         assertTrue(uniqueDeckList.contains(DECK_A));
     }
@@ -44,8 +44,8 @@ public class UniqueDeckListTest {
     @Test
     public void contains_deckWithSameIdentityFieldsInList_returnstrue() {
         uniqueDeckList.add(DECK_A);
-        Deck editedDeck_A = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
-        assertTrue(uniqueDeckList.contains(editedDeck_A));
+        Deck editedDeckA = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
+        assertTrue(uniqueDeckList.contains(editedDeckA));
     }
 
     @Test
@@ -91,10 +91,10 @@ public class UniqueDeckListTest {
     @Test
     public void setDeck_editedDeckHasSameIdentity_success() {
         uniqueDeckList.add(DECK_A);
-        Deck editedDeck_A = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
-        uniqueDeckList.setDeck(DECK_A, editedDeck_A);
+        Deck editedDeckA = new DeckBuilder(DECK_A).withCards(VALID_CARD_LIST).build();
+        uniqueDeckList.setDeck(DECK_A, editedDeckA);
         UniqueDeckList expectedUniqueDeckList = new UniqueDeckList();
-        expectedUniqueDeckList.add(editedDeck_A);
+        expectedUniqueDeckList.add(editedDeckA);
         assertEquals(expectedUniqueDeckList, uniqueDeckList);
     }
 

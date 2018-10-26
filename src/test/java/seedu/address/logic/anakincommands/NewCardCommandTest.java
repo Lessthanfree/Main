@@ -47,7 +47,7 @@ public class NewCardCommandTest {
     }
 
     @Test
-    public void execute_CardAcceptedByModel_success() throws Exception {
+    public void execute_cardAcceptedByModel_success() throws Exception {
         ModelStubAcceptingCardAdded modelStub = new ModelStubAcceptingCardAdded();
         Card validCard = CARD_A;
 
