@@ -26,12 +26,12 @@ public class CardTest {
         assertFalse(CARD_A.isSameCard(null));
 
         // different question -> returns false
-        Card editedCard_A = new CardBuilder(CARD_A).withQuestion(VALID_QUESTION_A).build();
-        assertFalse(CARD_A.isSameCard(editedCard_A));
+        Card editedDeckA = new CardBuilder(CARD_A).withQuestion(VALID_QUESTION_A).build();
+        assertFalse(CARD_A.isSameCard(editedDeckA));
 
         // same question, different answers -> returns true
-        editedCard_A = new CardBuilder(CARD_A).withAnswer(VALID_ANSWER_A).build();
-        assertTrue(CARD_A.isSameCard(editedCard_A));
+        editedDeckA = new CardBuilder(CARD_A).withAnswer(VALID_ANSWER_A).build();
+        assertTrue(CARD_A.isSameCard(editedDeckA));
     }
 
     @Test

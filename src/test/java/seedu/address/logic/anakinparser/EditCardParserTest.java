@@ -100,8 +100,7 @@ public class EditCardParserTest {
         // Question
         Index targetIndex = INDEX_THIRD_CARD;
         String userInput = targetIndex.getOneBased() + VALID_CARD_QUESTION_ARGS;
-        EditCardDescriptor descriptor = new EditCardDescriptorBuilder().
-            withQuestion(VALID_QUESTION_A).build();
+        EditCardDescriptor descriptor = new EditCardDescriptorBuilder().withQuestion(VALID_QUESTION_A).build();
         EditCardCommand expectedCommand = new EditCardCommand(targetIndex, descriptor);
         assertParseSuccess(parser, userInput, expectedCommand);
 
