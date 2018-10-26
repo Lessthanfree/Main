@@ -47,16 +47,12 @@ public class CommandTestUtil {
 
 
     public static final String VALID_CARD_A_ARGS = " " + PREFIX_QUESTION +
-            VALID_QUESTION_A + " " + PREFIX_ANSWER + VALID_ANSWER_A;
+        VALID_QUESTION_A + " " + PREFIX_ANSWER + VALID_ANSWER_A;
 
-    public static final String VALID_CARD_QUESTION_ARGS = " " +
-            PREFIX_QUESTION + VALID_QUESTION_A;
-    public static final String VALID_CARD_ANSWER_ARGS = " " +
-            PREFIX_ANSWER + VALID_ANSWER_A;
-    public static final String INVALID_CARD_QUESTION_ARGS = " " +
-            PREFIX_QUESTION + INVALID_QUESTION;
-    public static final String INVALID_CARD_ANSWER_ARGS = " " +
-            PREFIX_ANSWER + INVALID_ANSWER;
+    public static final String VALID_CARD_QUESTION_ARGS = " " + PREFIX_QUESTION + VALID_QUESTION_A;
+    public static final String VALID_CARD_ANSWER_ARGS = " " + PREFIX_ANSWER + VALID_ANSWER_A;
+    public static final String INVALID_CARD_QUESTION_ARGS = " " + PREFIX_QUESTION + INVALID_QUESTION;
+    public static final String INVALID_CARD_ANSWER_ARGS = " " + PREFIX_ANSWER + INVALID_ANSWER;
 
 
     public static final List<Card> VALID_CARD_LIST = new ArrayList<>();
@@ -70,9 +66,9 @@ public class CommandTestUtil {
 
     static {
         DESC_AMY = new EditDeckDescriptorBuilder().withName(VALID_NAME_DECK_A)
-                .withCards(TYPICAL_CARD_LIST).build();
+            .withCards(TYPICAL_CARD_LIST).build();
         DESC_BOB = new EditDeckDescriptorBuilder().withName(VALID_NAME_DECK_B)
-                .withCards(TYPICAL_CARD_LIST).build();
+            .withCards(TYPICAL_CARD_LIST).build();
     }
 
 
@@ -136,7 +132,7 @@ public class CommandTestUtil {
 
         final String[] splitName = deck.getName().fullName.split("\\s+");
         model.updateFilteredDeckList(
-                new DeckNameContainsKeywordsPredicate(Arrays.asList(splitName[0])));
+            new DeckNameContainsKeywordsPredicate(Arrays.asList(splitName[0])));
 
         assertEquals(1, model.getFilteredDeckList().size());
     }

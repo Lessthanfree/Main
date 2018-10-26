@@ -61,7 +61,8 @@ public class ClearCommandSystemTest extends AddressBookSystemTest {
 //     * {@code expectedResultMessage} and the model related components equal to {@code expectedAddressbookModel}.
 //     * @see ClearCommandSystemTest#assertCommandSuccess(String)
 //     */
-//    private void assertCommandSuccess(String command, String expectedResultMessage, AddressbookModel expectedAddressbookModel) {
+//    private void assertCommandSuccess(String command, String expectedResultMessage, AddressbookModel
+// expectedAddressbookModel) {
 //        executeCommand(command);
 //        assertApplicationDisplaysExpected("", expectedResultMessage, expectedAddressbookModel);
 //        assertCommandBoxShowsDefaultStyle();

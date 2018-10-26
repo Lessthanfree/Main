@@ -24,7 +24,7 @@ public class DeleteDeckCommandParser implements ParserInterface<DeleteDeckComman
             return new DeleteDeckCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    DeleteDeckCommand.MESSAGE_USAGE), pe);
+                DeleteDeckCommand.MESSAGE_USAGE), pe);
         }
     }
 

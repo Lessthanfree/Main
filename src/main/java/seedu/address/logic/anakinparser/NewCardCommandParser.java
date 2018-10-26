@@ -36,12 +36,12 @@ public class NewCardCommandParser implements ParserInterface<NewCardCommand> {
      */
     public NewCardCommand parse(String args) throws ParseException {
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_ANSWER, PREFIX_QUESTION);
+            ArgumentTokenizer.tokenize(args, PREFIX_ANSWER, PREFIX_QUESTION);
 
         if (!arePrefixesPresent(argMultimap, PREFIX_ANSWER, PREFIX_QUESTION)
-                    || !argMultimap.getPreamble().isEmpty()) {
+            || !argMultimap.getPreamble().isEmpty()) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    NewCardCommand.MESSAGE_USAGE));
+                NewCardCommand.MESSAGE_USAGE));
         }
         Question question = ParserUtil.parseQuestion(argMultimap.getValue(PREFIX_QUESTION).get());
         Answer answer = ParserUtil.parseAnswer(argMultimap.getValue(PREFIX_ANSWER).get());

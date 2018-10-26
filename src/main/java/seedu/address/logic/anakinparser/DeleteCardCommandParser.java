@@ -24,7 +24,7 @@ public class DeleteCardCommandParser implements ParserInterface<DeleteCardComman
             return new DeleteCardCommand(index);
         } catch (ParseException pe) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    DeleteCardCommand.MESSAGE_USAGE), pe);
+                DeleteCardCommand.MESSAGE_USAGE), pe);
         }
     }
 

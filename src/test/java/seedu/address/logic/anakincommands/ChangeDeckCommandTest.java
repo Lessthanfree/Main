@@ -47,7 +47,8 @@ public class ChangeDeckCommandTest {
         Index outOfBoundIndex = Index.fromOneBased(model.getFilteredDeckList().size() + 1);
         ChangeDeckCommand cdCommand = new ChangeDeckCommand(outOfBoundIndex);
 
-        assertCommandFailure(cdCommand, model, commandHistory, AddressbookMessages.MESSAGE_INVALID_DECK_DISPLAYED_INDEX);
+        assertCommandFailure(cdCommand, model, commandHistory,
+            AddressbookMessages.MESSAGE_INVALID_DECK_DISPLAYED_INDEX);
     }
 
 //    @Test
@@ -102,7 +103,8 @@ public class ChangeDeckCommandTest {
 
         ChangeDeckCommand cdCommand = new ChangeDeckCommand(outOfBoundIndex);
 
-        assertCommandFailure(cdCommand, model, commandHistory, AddressbookMessages.MESSAGE_INVALID_DECK_DISPLAYED_INDEX);
+        assertCommandFailure(cdCommand, model, commandHistory,
+            AddressbookMessages.MESSAGE_INVALID_DECK_DISPLAYED_INDEX);
     }
 
     @Test

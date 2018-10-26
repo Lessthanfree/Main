@@ -9,7 +9,8 @@ public class FindCommandSystemTest extends AddressBookSystemTest {
 //         */
 //        String command = "   " + FindCommand.COMMAND_WORD + " " + KEYWORD_MATCHING_MEIER + "   ";
 //        AddressbookModel expectedAddressbookModel = getModel();
-//        ModelHelper.setFilteredList(expectedAddressbookModel, BENSON, DANIEL); // first names of Benson and Daniel are "Meier"
+//        ModelHelper.setFilteredList(expectedAddressbookModel, BENSON, DANIEL); // first names of Benson and Daniel
+// are "Meier"
 //        assertCommandSuccess(command, expectedAddressbookModel);
 //        assertSelectedCardUnchanged();
 //
@@ -135,7 +136,8 @@ public class FindCommandSystemTest extends AddressBookSystemTest {
 //
 //    /**
 //     * Executes {@code command} and verifies that the command box displays an empty string, the result display
-//     * box displays {@code AddressbookMessages#MESSAGE_PERSONS_LISTED_OVERVIEW} with the number of people in the filtered list,
+//     * box displays {@code AddressbookMessages#MESSAGE_PERSONS_LISTED_OVERVIEW} with the number of people in the
+// filtered list,
 //     * and the model related components equal to {@code expectedAddressbookModel}.
 //     * These verifications are done by
 //     * {@code AddressBookSystemTest#assertApplicationDisplaysExpected(String, String, AddressbookModel)}.<br>

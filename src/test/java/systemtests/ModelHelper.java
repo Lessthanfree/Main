@@ -21,7 +21,7 @@ public class ModelHelper {
      */
     public static void setFilteredDeckList(Model model, List<Deck> decksToDisplay) {
         Optional<Predicate<Deck>> deckPredicate =
-                decksToDisplay.stream().map(ModelHelper::getPredicateMatchingDecks).reduce(Predicate::or);
+            decksToDisplay.stream().map(ModelHelper::getPredicateMatchingDecks).reduce(Predicate::or);
         model.updateFilteredDeckList(deckPredicate.orElse(PREDICATE_MATCHING_NO_DECKS));
     }
 
@@ -30,7 +30,7 @@ public class ModelHelper {
      */
     public static void setFilteredCardList(Model model, List<Card> cardsToDisplay) {
         Optional<Predicate<Card>> cardPredicate =
-                cardsToDisplay.stream().map(ModelHelper::getPredicateMatchingCards).reduce(Predicate::or);
+            cardsToDisplay.stream().map(ModelHelper::getPredicateMatchingCards).reduce(Predicate::or);
         model.updateFilteredCardList(cardPredicate.orElse(PREDICATE_MATCHING_NO_CARDS));
     }
 

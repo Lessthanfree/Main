@@ -58,7 +58,8 @@ public class AddressbookLogicManagerTest {
      *
      * @see #assertCommandBehavior(Class, String, String, AddressbookModel)
      */
-    private void assertCommandSuccess(String inputCommand, String expectedMessage, AddressbookModel expectedAddressbookModel) {
+    private void assertCommandSuccess(String inputCommand, String expectedMessage,
+                                      AddressbookModel expectedAddressbookModel) {
         assertCommandBehavior(null, inputCommand, expectedMessage, expectedAddressbookModel);
     }
 
@@ -86,7 +87,8 @@ public class AddressbookLogicManagerTest {
      * @see #assertCommandBehavior(Class, String, String, AddressbookModel)
      */
     private void assertCommandFailure(String inputCommand, Class<?> expectedException, String expectedMessage) {
-        AddressbookModel expectedAddressbookModel = new AddressbookModelManagerAddressbook(addressbookModel.getAddressBook(), new UserPrefs());
+        AddressbookModel expectedAddressbookModel = new AddressbookModelManagerAddressbook(
+            addressbookModel.getAddressBook(), new UserPrefs());
         assertCommandBehavior(expectedException, inputCommand, expectedMessage, expectedAddressbookModel);
     }
 
@@ -119,7 +121,7 @@ public class AddressbookLogicManagerTest {
         try {
             CommandResult result = addressbookLogic.execute(HistoryCommand.COMMAND_WORD);
             String expectedMessage = String.format(
-                    HistoryCommand.MESSAGE_SUCCESS, String.join("\n", expectedCommands));
+                HistoryCommand.MESSAGE_SUCCESS, String.join("\n", expectedCommands));
             assertEquals(expectedMessage, result.feedbackToUser);
         } catch (ParseException | CommandException e) {
             throw new AssertionError("Parsing and execution of HistoryCommand.COMMAND_WORD should succeed.", e);

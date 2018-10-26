@@ -45,7 +45,7 @@ public class ChangeDeckCommandParser implements ParserInterface<ChangeDeckComman
 
         } catch (ParseException pe) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    ChangeDeckCommand.MESSAGE_USAGE), pe);
+                ChangeDeckCommand.MESSAGE_USAGE), pe);
         }
     }
 

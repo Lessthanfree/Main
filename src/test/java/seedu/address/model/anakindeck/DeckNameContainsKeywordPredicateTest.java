@@ -17,14 +17,17 @@ public class DeckNameContainsKeywordPredicateTest {
         List<String> firstPredicateKeywordList = Collections.singletonList("first");
         List<String> secondPredicateKeywordList = Arrays.asList("first", "second");
 
-        DeckNameContainsKeywordsPredicate firstPredicate = new DeckNameContainsKeywordsPredicate(firstPredicateKeywordList);
-        DeckNameContainsKeywordsPredicate secondPredicate = new DeckNameContainsKeywordsPredicate(secondPredicateKeywordList);
+        DeckNameContainsKeywordsPredicate firstPredicate = new DeckNameContainsKeywordsPredicate(
+            firstPredicateKeywordList);
+        DeckNameContainsKeywordsPredicate secondPredicate = new DeckNameContainsKeywordsPredicate(
+            secondPredicateKeywordList);
 
         // same object -> returns true
         assertTrue(firstPredicate.equals(firstPredicate));
 
         // same values -> returns true
-        DeckNameContainsKeywordsPredicate firstPredicateCopy = new DeckNameContainsKeywordsPredicate(firstPredicateKeywordList);
+        DeckNameContainsKeywordsPredicate firstPredicateCopy = new DeckNameContainsKeywordsPredicate(
+            firstPredicateKeywordList);
         assertTrue(firstPredicate.equals(firstPredicateCopy));
 
         // different types -> returns false
@@ -40,7 +43,8 @@ public class DeckNameContainsKeywordPredicateTest {
     @Test
     public void test_nameContainsKeywords_returnsTrue() {
         // One keyword
-        DeckNameContainsKeywordsPredicate predicate = new DeckNameContainsKeywordsPredicate(Collections.singletonList("Alice"));
+        DeckNameContainsKeywordsPredicate predicate = new DeckNameContainsKeywordsPredicate(
+            Collections.singletonList("Alice"));
         assertTrue(predicate.test(new DeckBuilder().withName("Alice Bob").build()));
 
         // Multiple keywords

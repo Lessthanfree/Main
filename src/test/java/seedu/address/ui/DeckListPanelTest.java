@@ -26,7 +26,7 @@ import seedu.address.storage.XmlSerializableAnakin;
 
 public class DeckListPanelTest extends GuiUnitTest {
     private static final ObservableList<Deck> TYPICAL_DECKS =
-            FXCollections.observableList(getTypicalDecks());
+        FXCollections.observableList(getTypicalDecks());
 
     private static final JumpToListRequestEvent JUMP_TO_SECOND_EVENT = new JumpToListRequestEvent(INDEX_SECOND_DECK);
 
@@ -82,7 +82,7 @@ public class DeckListPanelTest extends GuiUnitTest {
     private ObservableList<Deck> createBackingList(int deckCount) throws Exception {
         Path xmlFile = createXmlFileWithDecks(deckCount);
         XmlSerializableAnakin xmlAnakin =
-                XmlUtil.getDataFromFile(xmlFile, XmlSerializableAnakin.class);
+            XmlUtil.getDataFromFile(xmlFile, XmlSerializableAnakin.class);
         return FXCollections.observableArrayList(xmlAnakin.toModelType().getDeckList());
     }
 
@@ -116,6 +116,6 @@ public class DeckListPanelTest extends GuiUnitTest {
         uiPartRule.setUiPart(deckListPanel);
 
         deckListPanelHandle = new DeckListPanelHandle(getChildNode(deckListPanel.getRoot(),
-                DeckListPanelHandle.DECK_LIST_VIEW_ID));
+            DeckListPanelHandle.DECK_LIST_VIEW_ID));
     }
 }

@@ -25,7 +25,7 @@ public class EditDeckCommandParser implements ParserInterface<EditDeckCommand> {
     public EditDeckCommand parse(String args) throws ParseException {
         requireNonNull(args);
         ArgumentMultimap argMultimap =
-                ArgumentTokenizer.tokenize(args, PREFIX_NAME);
+            ArgumentTokenizer.tokenize(args, PREFIX_NAME);
 
         Index index;
 
@@ -33,7 +33,7 @@ public class EditDeckCommandParser implements ParserInterface<EditDeckCommand> {
             index = ParserUtil.parseIndex(argMultimap.getPreamble());
         } catch (ParseException pe) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    EditDeckCommand.MESSAGE_USAGE), pe);
+                EditDeckCommand.MESSAGE_USAGE), pe);
         }
 
         EditDeckDescriptor editDeckDescriptor = new EditDeckDescriptor();

@@ -52,11 +52,11 @@ public class NewCardCommandTest {
         Card validCard = CARD_A;
 
         CommandResult commandResult = new NewCardCommand(validCard).
-                execute(modelStub, commandHistory);
+            execute(modelStub, commandHistory);
 
         assertEquals(String.format(
-                NewCardCommand.MESSAGE_NEW_CARD_SUCCESS,
-                validCard), commandResult.feedbackToUser);
+            NewCardCommand.MESSAGE_NEW_CARD_SUCCESS,
+            validCard), commandResult.feedbackToUser);
         assertEquals(Arrays.asList(validCard), modelStub.cardsAdded);
         assertEquals(EMPTY_COMMAND_HISTORY, commandHistory);
     }
@@ -88,7 +88,7 @@ public class NewCardCommandTest {
         Card validCard = CARD_B;
         NewCardCommand newCardCommand = new NewCardCommand(validCard);
         Deck validDeck = new DeckBuilder().
-                withName("Deck with Card B").build();
+            withName("Deck with Card B").build();
 
         Model model = testModel;
         model.goIntoDeck(validDeck);
@@ -96,8 +96,8 @@ public class NewCardCommandTest {
         CommandResult commandResult = newCardCommand.execute(model, commandHistory);
 
         assertEquals(String.format(
-                NewCardCommand.MESSAGE_NEW_CARD_SUCCESS,
-                validCard), commandResult.feedbackToUser);
+            NewCardCommand.MESSAGE_NEW_CARD_SUCCESS,
+            validCard), commandResult.feedbackToUser);
 
     }
 
@@ -105,20 +105,20 @@ public class NewCardCommandTest {
     @Test
     public void equals() {
         Card firstCard = new CardBuilder().
-                withQuestion("Test Card1").withAnswer("A1").build();
+            withQuestion("Test Card1").withAnswer("A1").build();
         Card secondCard = new CardBuilder().
-                withQuestion("Test Card2").withAnswer("A2").build();
+            withQuestion("Test Card2").withAnswer("A2").build();
         NewCardCommand addFirstCardCommand =
-                new NewCardCommand(firstCard);
+            new NewCardCommand(firstCard);
         NewCardCommand addSecondCardCommand =
-                new NewCardCommand(secondCard);
+            new NewCardCommand(secondCard);
 
         // same object -> returns true
         assertTrue(addFirstCardCommand.equals(addFirstCardCommand));
 
         // same values -> returns true
         NewCardCommand addFirstCardCommandCopy =
-                new NewCardCommand(firstCard);
+            new NewCardCommand(firstCard);
         assertTrue(addFirstCardCommand.equals(addFirstCardCommandCopy));
 
         // different types -> returns false
