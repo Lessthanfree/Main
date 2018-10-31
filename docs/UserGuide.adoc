@@ -64,12 +64,12 @@ Format: `help`
 
 === Lists all decks (or all cards) : `list`
 
-Displays a list of all available decks or displays all cards if the command is typed inside a deck. +
+Displays a list of all available decks. If inside a deck displays all cards in that deck. +
 Format: `list`
 
 
 === Navigating into a deck : `cd`
-Enters the deck identified by the index number used in the displayed deck list. +
+Enters the deck identified by the index in the displayed deck list. +
 Format: `cd INDEX_OF_DECK`
 
 ****
@@ -80,7 +80,7 @@ Format: `cd INDEX_OF_DECK`
 Examples:
 
 * `cd 2` +
-Enter the 2nd deck in the deck list
+Enter the 2nd deck in the currently displayed deck list.
 
 === Navigating out of the current deck : `cd ..`
 Exit the current deck and returns the user to the list of decks. +
@@ -90,12 +90,12 @@ Examples:
 
 * `cd 1` +
 * `cd ..` +
-Enter the 1st deck
+Enter the 1st deck in the currently displayed deck list.
 then return back to the Anakin's deck list (get out of the 1st deck)
 
 === Adding a deck: `newdeck`
 
-Adds a new deck to Anakin +
+Adds a new deck with no cards to Anakin +
 Format: `newdeck n/NAME`
 
 ****
@@ -137,7 +137,7 @@ Examples:
 
 * `list` +
 `deldeck 2` +
-Deletes the 2nd deck that appears in the list.
+Deletes the 2nd deck that appears in the currently displayed list of decks.
 
 === Adding a card : `newcard`
 
@@ -189,6 +189,26 @@ Examples:
 `delcard 2` +
 Get into the first deck then deletes the 2nd card that appears in the card list.
 
+=== Review the cards in a deck: `review`
+Starts a review of the deck specified. +
+Format: `review INDEX_OF_DECK`
+
+=== Flip a card in a review: `flipcard`
+View the flipside of the current card during a review. +
+Format: `flipcard`
+
+=== Go to the next card in a review `nextcard`
+Views the subsequent card in the deck. +
+Format: `nextcard`
+
+=== Go to the previous card in a review `prevcard`
+Views the previous card in the deck. +
+Format: `prevcard`
+
+=== Exit review mode `endreview`
+Exits the review and returns to the editing menu
+Format: `endreview`
+
 === Sort current list in lexicographical order : `sort`
 If user is currently in a deck, sort all cards in alphabetical order according to the question. +
 If user is not in a deck, sort all decks in alphabetical order according to the deck's name. +
@@ -203,7 +223,7 @@ Format: `rank`
 * Note: User must be inside a deck to perform this command.
 ****
 
-=== Locate a deck / card by name : `find`
+=== Locate a deck by name / card by question : `find`
 
 Filters decks by names or cards by questions that contain any of the given keywords.
 
@@ -226,9 +246,9 @@ Examples:
 * `find Algo` +
 Returns `algo` and `Easy Algo`
 * User is not inside any decks: `find Bio Chem Physics` +
-Returns any decks having names `Bio`, `Chem`, or `Physics`
+Returns any decks containing `Bio`, `Chem`, or `Physics` in their name.
 * User is inside a deck: `find John Snow` +
-Returns any cards having questions `John` or `Snow`
+Returns any cards containing `John` or `Snow` in their questions.
 
 === Export deck to xml file : `export`
 Creates an `xml` file at the specified FILEPATH containing the deck at INDEX_OF_DECK. +
